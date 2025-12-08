@@ -142,59 +142,6 @@
     });
 </script>
 
-<script>
-async function loadRandomProductsForSlider() {
-    const response = await fetch("products.json");
-    const products = await response.json();
-
-    // 3 rastgele ürün seçelim
-    const randomItems = products.sort(() => 0.5 - Math.random()).slice(0, 3);
-
-    const slider = document.getElementById("productSlider");
-
-    slider.innerHTML = randomItems.map(p => `
-        <li class="text slider-product-item" style="position:;">
-            <img src="${p.images[0]}" alt="" style="max-height:500px; object-fit:contain; margin:auto; display:block;">
-            
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-
-                        <h1 class="m-b-20" style="font-size:42px; color:white; text-shadow:none;">
-                            <strong>${p.title}</strong>
-                        </h1>
-
-                        <p class="m-b-20" style="color:#eee; font-size:20px;">
-                            ${p.price}
-                        </p>
-
-                        <p>
-                            <a class="btn hvr-hover" href="urun-detay.html?id=${p.id}">
-                                ÜRÜNE GİT
-                            </a>
-                        </p>
-
-                    </div>
-                </div>
-            </div>
-
-        </li>
-    `).join("");
- setTimeout(() => {
-    $('#slides-shop').superslides({
-        inherit_width_from: '.cover-slides',
-        inherit_height_from: '.cover-slides',
-        play: 4000,
-        animation: 'fade'
-    });
-}, 50);
-
-}
-
-document.addEventListener("DOMContentLoaded", loadRandomProductsForSlider);
-</script>
-
-
 
 
 
@@ -352,16 +299,52 @@ document.addEventListener("DOMContentLoaded", loadRandomProductsForSlider);
 </div>
 
     
-<div id="slides-shop" class="cover-slides">
-    <ul id="productSlider" class="slides-container">
-        <!-- Slider itemları JS ile eklenecek -->
-    </ul>
-
-    <div class="slides-navigation">
-        <a href="#" class="prev"><i class="fa fa-angle-left"></i></a>
-        <a href="#" class="next"><i class="fa fa-angle-right"></i></a>
+ <!-- Start Slider -->
+    <div id="slides-shop" class="cover-slides">
+        <ul class="slides-container">
+            <li class="text-left">
+                <img src="images/banner-01.jpg" alt="">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1 class="m-b-20"><strong>SkateX <br></strong></h1>
+                            <p class="m-b-40">Sezon Sonu Tüm Ürünlerde %10 İndirim!</p>
+                            <p><a class="btn hvr-hover" href="shop.html">ÜRÜNLERE GİT</a></p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="text-center">
+                <img src="images/banner-02.jpg" alt="">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1 class="m-b-20"><strong>SkateX <br> Özel Seri</strong></h1>
+                            <p class="m-b-40">lorem ipsum dolor sit amet<br> lorem ipsum dolor sit amet</p>
+                            <p><a class="btn hvr-hover" href="#">Shop New</a></p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="text-right">
+                <img src="images/banner-03.jpg" alt="">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1 class="m-b-20"><strong>Skatex <br> Özel Seri</strong></h1>
+                            <p class="m-b-40">Lorem ipsum dolor sit amet<br> Lorem ipsum dolor sit amet</p>
+                            <p><a class="btn hvr-hover" href="#">Shop New</a></p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <div class="slides-navigation">
+            <a href="#" class="next"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+            <a href="#" class="prev"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+        </div>
     </div>
-</div>
+    <!-- End Slider -->
 
 
 
