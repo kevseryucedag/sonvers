@@ -1469,3 +1469,86 @@ a:hover {
 .contact-box-main .btn:hover {
     box-shadow: 0 0 15px #ffa800;
 }
+
+
+
+.contact-box-main .row {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 30px !important;
+}
+
+
+.contact-info-left {
+    background: #111;
+    color: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px #00000055;
+    height: 100%;
+}
+
+.contact-info-left h2 {
+    color: #ffa800;
+    margin-bottom: 15px;
+}
+
+
+.contact-form-right {
+    background: #111;
+    color: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px #00000055;
+}
+
+
+.contact-form-right input,
+.contact-form-right textarea {
+    background: #000 !important;
+    border: 2px solid #ffa800 !important;
+    color: #ffa800 !important;
+    font-weight: bold;
+}
+
+
+.contact-form-right .btn {
+    background: #ffa800 !important;
+    border: 3px solid #000 !important;
+    color: #000 !important;
+    font-weight: bold;
+    padding: 12px 30px;
+}
+
+
+.contact-box-main iframe {
+    width: 100% !important;
+    height: 350px !important;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+
+@media(min-width: 992px) {
+    .contact-info-left {
+        width: 30% !important;
+    }
+
+    .contact-form-right {
+        width: 65% !important;
+    }
+}
+
+
+@media(max-width: 991px) {
+    .contact-info-left,
+    .contact-form-right {
+        width: 100% !important;
+    }
+}
+
+
+.contact-info-left p,
+.contact-info-left a {
+    color: #ddd !important;
+}
