@@ -1,0 +1,220 @@
+
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #0a0a0a;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+.pixel-box {
+    border: 3px solid #00ff99;
+    box-shadow: 0 0 10px #00ff99;
+}
+
+
+.admin-wrapper {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+
+
+.admin-sidebar {
+    width: 260px;
+    background: #000;
+    border-right: 3px solid #00ff99;
+    box-shadow: 0 0 12px #00ff99;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-logo {
+    font-family: 'Press Start 2P';
+    color: #00ff99;
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 16px;
+    text-shadow: 0 0 8px #00ff99;
+}
+
+.admin-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.admin-menu li {
+    padding: 12px;
+    margin-bottom: 8px;
+    border: 2px solid #00ff99;
+    text-align: center;
+    font-family: 'Press Start 2P';
+    font-size: 12px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.admin-menu li:hover {
+    background: #00ff99;
+    color: #000;
+    box-shadow: 0 0 12px #00ff99;
+}
+
+.admin-menu li.active {
+    background: #00ff99;
+    color: #000;
+}
+
+.logout-btn {
+    margin-top: auto;
+    background: #ff2b2b;
+    border-color: #ff2b2b;
+    box-shadow: 0 0 12px #ff2b2b;
+}
+
+.logout-btn:hover {
+    background: #ff5555;
+    box-shadow: 0 0 16px #ff2b2b;
+}
+
+
+
+.admin-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.admin-topbar {
+    background: #000;
+    border-bottom: 3px solid #00ff99;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.admin-title {
+    margin: 0;
+    font-family: 'Press Start 2P';
+    color: #00ff99;
+    font-size: 16px;
+    text-shadow: 0 0 8px #00ff99;
+}
+
+.admin-profile {
+    font-family: 'Inter';
+    font-size: 14px;
+    color: #fff;
+}
+
+
+
+.admin-view {
+    padding: 20px;
+    overflow-y: auto;
+    height: calc(100vh - 70px);
+}
+
+
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+.dashboard-card {
+    padding: 20px;
+    border: 3px solid #00ff99;
+    background: #0d0d0d;
+    color: #00ff99;
+    font-family: 'Press Start 2P';
+    text-align: center;
+    box-shadow: 0 0 12px #00ff99;
+    transition: 0.2s;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 18px #00ff99;
+}
+
+
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.admin-table th,
+.admin-table td {
+    border: 2px solid #00ff99;
+    padding: 10px;
+    font-size: 13px;
+    text-align: center;
+}
+
+.admin-table th {
+    background: #00ff99;
+    color: #000;
+    font-family: 'Press Start 2P';
+}
+
+.admin-table td {
+    background: #0d0d0d;
+}
+
+
+
+.admin-form {
+    display: grid;
+    gap: 15px;
+    max-width: 500px;
+}
+
+.admin-form label {
+    font-family: 'Press Start 2P';
+    font-size: 12px;
+}
+
+.admin-form input,
+.admin-form textarea,
+.admin-form select {
+    padding: 10px;
+    border: 2px solid #00ff99;
+    background: #000;
+    color: #00ff99;
+    font-family: 'Inter';
+}
+
+.admin-form button {
+    background: #00ff99;
+    border: none;
+    padding: 12px;
+    font-family: 'Press Start 2P';
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.admin-form button:hover {
+    background: #000;
+    color: #00ff99;
+    border: 2px solid #00ff99;
+}
+
+
+
+

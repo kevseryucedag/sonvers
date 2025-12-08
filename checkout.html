@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Skatex — Ödeme</title>
+
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/custom.css">
+
+<style>
+
+body {
+    background: #000;
+    color: #0aff9d;
+    font-family: 'Press Start 2P';
+}
+
+/* Sayfa konteyneri */
+.checkout-wrap {
+    max-width: 1150px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+/* Başlık */
+.checkout-title {
+    text-align: center;
+    font-size: 26px;
+    margin-bottom: 35px;
+    text-shadow: 0 0 10px #0aff9d;
+}
+
+/* Büyük kutular */
+.pixel-box {
+    border: 3px solid #0aff9d;
+    box-shadow: 0 0 12px #0aff9d;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.65);
+    margin-bottom: 30px;
+}
+
+/* Bölüm başlıkları */
+.pixel-box h3 {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #0aff9d;
+}
+
+/* Ürün satırı */
+.checkout-item {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #0aff9d33;
+}
+
+.checkout-item img {
+    width: 80px;
+    height: auto;
+    border: 2px solid #0aff9d;
+    box-shadow: 0 0 8px #0aff9d;
+}
+
+/* Ürün adı */
+.checkout-item .title {
+    font-size: 13px;
+}
+
+/* Toplam */
+.summary-line {
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+/* Form inputları */
+input {
+    width: 100%;
+    background: #000;
+    border: 2px solid #0aff9d;
+    color: #0aff9d;
+    padding: 10px;
+    margin-bottom: 12px;
+    font-size: 12px;
+    font-family: 'Press Start 2P';
+}
+
+.payment-row {
+    display: flex;
+    gap: 15px;
+}
+.payment-row input { flex: 1; }
+
+/* Ödeme butonu */
+.pay-btn {
+    width: 100%;
+    background: #0aff9d;
+    border: 3px solid #0aff9d;
+    padding: 12px;
+    margin-top: 20px;
+    color: #000;
+    font-family: 'Press Start 2P';
+    cursor: pointer;
+    transition: 0.2s;
+}
+.pay-btn:hover {
+    background: #000;
+    color: #0aff9d;
+    box-shadow: 0 0 15px #0aff9d;
+}
+
+</style>
+</head>
+
+<body>
+
+<div data-include="header.html"></div>
+
+<div class="checkout-wrap">
+
+    <h1 class="checkout-title">ÖDEME SAYFASI</h1>
+
+    
+    <div class="pixel-box">
+        <h3>Sepetinizdeki Ürünler</h3>
+        <div id="checkout-items"></div>
+
+        <div class="summary-line">
+            <span>Ara Toplam:</span>
+            <span id="summary-total">₺0</span>
+        </div>
+    </div>
+
+    
+    <div class="pixel-box">
+        <h3>Teslimat Bilgileri</h3>
+
+        <input type="text" placeholder="Ad Soyad">
+        <input type="text" placeholder="Adres">
+        <input type="text" placeholder="Şehir / İlçe">
+        <input type="text" placeholder="Telefon">
+    </div>
+
+   
+    <div class="pixel-box">
+        <h3>Kredi Kartı Bilgileri</h3>
+
+        <input type="text" placeholder="Kart Numarası">
+
+        <div class="payment-row">
+            <input type="text" placeholder="AA/YY">
+            <input type="text" placeholder="CVV">
+        </div>
+
+        <button class="pay-btn" onclick="fakePay()">ÖDEMEYİ TAMAMLA</button>
+    </div>
+
+</div>
+
+<div data-include="footer.html"></div>
+
+<script src="include.js"></script>
+<script src="js/cart.js"></script>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", () => {
+    const cart = readCart();
+    const box = document.getElementById("checkout-items");
+    const totalBox = document.getElementById("summary-total");
+
+    if (!cart.length) {
+        box.innerHTML = "<p>Sepetiniz boş.</p>";
+        return;
+    }
+
+    fetch("products.json")
+        .then(res => res.json())
+        .then(products => {
+            let total = 0;
+            let html = "";
+
+            cart.forEach(item => {
+                const p = products.find(x => String(x.id) === String(item.id));
+                if (!p) return;
+
+                const fiyat = Number(p.price.replace(/[₺ ,.]/g, ""));
+                const toplam = fiyat * item.qty;
+                total += toplam;
+
+                html += `
+                    <div class="checkout-item">
+                        <img src="${p.images[0]}">
+                        <div class="title">${p.title} <br> ${item.qty} adet - ₺${toplam.toLocaleString()}</div>
+                    </div>
+                `;
+            });
+
+            box.innerHTML = html;
+            totalBox.textContent = "₺" + total.toLocaleString();
+        });
+});
+
+function fakePay() {
+    alert("Ödeme işlemi başarıyla simüle edildi.");
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,203 @@
+<!-- =============================
+     MESAJ KUTUSU — SKATEX ADMIN
+============================= -->
+
+<div>
+    <h2 class="dash-title">Mesaj Kutusu</h2>
+    <p class="dash-subtitle">Kullanıcılardan gelen mesajları görüntüle & yönet.</p>
+
+    <div class="pixel-box" style="padding:20px; margin-bottom:20px;">
+        <h3 style="font-family:'Press Start 2P'; color:#00ff99;">Gelen Mesajlar</h3>
+
+        <div class="messages-wrapper">
+
+            <!-- Mesaj Listesi -->
+            <div class="messages-list" id="messages-list"></div>
+
+            <!-- Mesaj Detay -->
+            <div class="messages-detail" id="messages-detail">
+                <p class="empty-msg">Bir mesaj seçin.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.messages-wrapper {
+    display: flex;
+    gap: 20px;
+}
+
+.messages-list {
+    width: 260px;
+    background: #0b0b0b;
+    border: 2px solid #00ff99;
+    padding: 10px;
+    max-height: 420px;
+    overflow-y: auto;
+}
+
+.message-item {
+    padding: 12px;
+    border-bottom: 1px solid #00ff9955;
+    cursor: pointer;
+    font-family: 'Press Start 2P';
+    font-size: 10px;
+    color: #fff;
+}
+
+.message-item:hover {
+    background: #00ff9922;
+}
+
+.message-item.unread {
+    color: #00ff99;
+}
+
+.messages-detail {
+    flex: 1;
+    background: #000;
+    border: 2px solid #00ff99;
+    padding: 20px;
+    min-height: 300px;
+    font-family: 'Press Start 2P';
+    font-size: 11px;
+    color: white;
+}
+
+.detail-label {
+    color: #00ff99;
+    margin-top: 10px;
+}
+
+.detail-msg {
+    margin-top: 15px;
+    font-size: 11px;
+    line-height: 1.8;
+}
+
+.btn-delete {
+    background: #ff4444;
+    padding: 10px 15px;
+    margin-top: 15px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Press Start 2P';
+    font-size: 10px;
+}
+
+.btn-delete:hover {
+    background: #cc0000;
+}
+</style>
+
+<script>
+window.onViewLoaded = (view) => {
+    if (view !== "messages") return;
+
+    console.log("%c[MESSAGES] Aktif", "color:#00ff99");
+
+    const listBox = document.getElementById("messages-list");
+    const detailBox = document.getElementById("messages-detail");
+
+    /* ======================================
+       LOCAL STORAGE — MESAJ SİSTEMİ
+    =======================================*/
+
+    function loadMessages() {
+        let msgs = JSON.parse(localStorage.getItem("skx_messages") || "[]");
+
+        // Eğer hiç mesaj yoksa 3 örnek mesaj yükle
+        if (msgs.length === 0) {
+            msgs = [
+                {
+                    name: "Efe K.",
+                    email: "efekara@gmail.com",
+                    subject: "Siparişim Ne Zaman Kargoya Verilir?",
+                    message: "Merhaba, dün verdiğim siparişin durumu hakkında bilgi alabilir miyim?",
+                    read: false
+                },
+                {
+                    name: "Miraç T.",
+                    email: "mirac55@outlook.com",
+                    subject: "Deck Ölçüsü Hakkında Soru",
+                    message: "7.75 ile 8.0 arasındaki fark nedir? Hangisini önerirsiniz?",
+                    read: false
+                },
+                {
+                    name: "Ayşe D.",
+                    email: "aysedogan@gmail.com",
+                    subject: "Ürün İade Süreci",
+                    message: "Merhaba, aldığım wheel modelini değiştirmek istiyorum. Nasıl yapabilirim?",
+                    read: true
+                }
+            ];
+            saveMessages(msgs);
+        }
+
+        return msgs;
+    }
+
+    function saveMessages(list) {
+        localStorage.setItem("skx_messages", JSON.stringify(list));
+    }
+
+    let messages = loadMessages();
+
+    /* ======================================
+       LİSTEYİ ÇİZ
+    =======================================*/
+    function renderList() {
+        listBox.innerHTML = "";
+
+        messages.forEach((msg, i) => {
+            const div = document.createElement("div");
+            div.className = "message-item " + (msg.read ? "read" : "unread");
+
+            div.innerHTML = `
+                <div>${msg.name}</div>
+                <div style="opacity:.7;">${msg.subject}</div>
+            `;
+
+            div.addEventListener("click", () => openMessage(i));
+            listBox.appendChild(div);
+        });
+    }
+
+    /* ======================================
+       MESAJ DETAYINI AÇ
+    =======================================*/
+    function openMessage(i) {
+        const msg = messages[i];
+        msg.read = true;
+        saveMessages(messages);
+
+        detailBox.innerHTML = `
+            <div class="detail-label">Gönderen</div>
+            <div>${msg.name} (${msg.email})</div>
+
+            <div class="detail-label">Konu</div>
+            <div>${msg.subject}</div>
+
+            <div class="detail-label">Mesaj</div>
+            <div class="detail-msg">${msg.message.replace(/\n/g, "<br>")}</div>
+
+            <button class="btn-delete" onclick="deleteMessage(${i})">Mesajı Sil</button>
+        `;
+
+        renderList();
+    }
+
+    /* ======================================
+       MESAJ SİL
+    =======================================*/
+    window.deleteMessage = (i) => {
+        messages.splice(i, 1);
+        saveMessages(messages);
+        renderList();
+        detailBox.innerHTML = `<p class="empty-msg">Bir mesaj seçin.</p>`;
+    };
+
+    renderList();
+};
+</script>

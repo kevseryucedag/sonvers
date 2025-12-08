@@ -1,0 +1,405 @@
+/* MAIN LAYOUT ------------------------------------------------------*/
+.shop-container {
+    display: flex;
+    max-width: 1300px;
+    margin: 40px auto;
+    gap: 30px;
+}
+
+
+#sidebar {
+    width: 260px;
+    background: #0A0A0A;
+    border: 3px solid #FF9F1C;
+    padding: 18px;
+    position: sticky;
+    top: 20px;
+    height: fit-content;
+    font-family: "Press Start 2P", cursive;
+}
+
+.sidebar-title {
+    color: #0AFF9D;
+    font-size: 14px;
+    margin-bottom: 15px;
+    text-shadow: 0 0 6px #0AFF9D;
+}
+
+.filter-section h4 {
+    color: white;
+    margin: 20px 0 10px;
+    font-size: 12px;
+}
+
+.cat-btn {
+    display: block;
+    width: 100%;
+    background: #111;
+    border: 2px solid #444;
+    padding: 10px;
+    margin-bottom: 10px;
+    color: #fff;
+    font-size: 11px;
+    cursor: pointer;
+}
+
+.cat-btn:hover {
+    background: #0AFF9D;
+    color: black;
+}
+
+.cat-btn.active {
+    background: #0AFF9D;
+    color: #000;
+    border-color: #0AFF9D;
+}
+
+/* PRICE SLIDER ----------------------------------------------------*/
+.price-slider {
+    position: relative;
+    width: 100%;
+    height: 40px;
+}
+
+.price-slider input[type=range] {
+    position: absolute;
+    width: 100%;
+    appearance: none;
+    background: transparent;
+    pointer-events: none;
+}
+
+.price-slider input[type=range]::-webkit-slider-thumb {
+    pointer-events: all;
+    width: 18px;
+    height: 18px;
+    background: #0AFF9D;
+    border: 2px solid #000;
+    border-radius: 4px;
+    appearance: none;
+    box-shadow: 0 0 6px #0AFF9D;
+}
+
+.price-values {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+    color: white;
+    font-size: 11px;
+}
+
+/* ACTIVE FILTER TAGS ----------------------------------------------*/
+.active-filters {
+    margin-top: 20px;
+}
+
+.filter-tag {
+    background: #0AFF9D;
+    color: black;
+    padding: 6px 8px;
+    font-size: 10px;
+    margin: 4px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+/* GRID -------------------------------------------------------------*/
+#shopMain {
+    flex: 1;
+}
+
+#search {
+    width: 260px;
+    padding: 10px;
+    background: #0F0F0F;
+    border: 2px solid #333;
+    color: white;
+}
+
+.shop-topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.empty {
+    color: #aaa;
+    text-align: center;
+    padding: 20px;
+    border: 2px dashed #555;
+    margin-top: 20px;
+}
+
+
+
+.products-single .mask-icon {
+    pointer-events: none;
+}
+
+.products-single .mask-icon a {
+    pointer-events: auto; /* sadece buton işlesin */
+}
+
+.box-img-hover {
+    cursor: pointer !important;
+}
+
+
+.price-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: "Press Start 2P", cursive;
+}
+
+.new-price {
+    color: #0AFF9D;
+    font-size: 12px;
+}
+
+.old-price {
+    color: #FF4F4F;
+    text-decoration: line-through;
+    opacity: 0.7;
+    font-size: 10px;
+}
+
+
+
+
+
+.products-single:hover .why-text h5 .new-price {
+    color: #fff !important;
+}
+
+
+
+.why-text h5 .new-price {
+    text-shadow: 0 0 6px #0AFF9D;
+}
+
+
+
+
+
+#sidebar {
+    width: 260px;
+    background: #000;
+    border: 3px solid #fff;
+    padding: 16px;
+    border-radius: 0;
+    box-shadow: 0 0 12px #0AFF9D55;
+}
+
+.cat-btn {
+    background: #000;
+    border: 2px solid #fff;
+    padding: 10px;
+    margin-bottom: 12px;
+    color: #fff;
+    font-size: 10px;
+}
+
+.cat-btn:hover {
+    border-color: #0AFF9D;
+    color: #0AFF9D;
+}
+
+
+
+
+
+/* ÜRÜN KARTLARI */
+.products-single {
+    background: #000;
+    border: 3px solid #fff;
+    padding: 10px;
+    margin-bottom: 30px;
+    transition: 0.15s;
+}
+
+.products-single:hover {
+    border-color: #0AFF9D;
+    box-shadow: 0 0 10px #0AFF9D99;
+    transform: scale(1.03);
+}
+
+/* ÜRÜN RESİMİ ALANI */
+.box-img-hover {
+    cursor: pointer;
+    border: 2px solid #fff;
+}
+
+.box-img-hover img {
+    width: 100%;
+}
+
+/* ÜRÜN BAŞLIK + FİYAT */
+.why-text h4 {
+    font-family: "Press Start 2P", cursive;
+    font-size: 11px;
+    color: #fff;
+    line-height: 1.4;
+    margin-top: 10px;
+}
+
+.price-area {
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+    font-family: "Press Start 2P", cursive;
+}
+
+.new-price {
+    color: #0AFF9D !important;
+}
+
+.old-price {
+    color: #FF4F4F;
+    text-decoration: line-through;
+    font-size: 10px;
+    opacity: 0.8;
+}
+
+
+
+#search {
+    width: 260px;
+    padding: 10px;
+    background: #000;
+    border: 3px solid #fff;
+    color: #fff;
+    font-family: "Press Start 2P", cursive;
+    font-size: 10px;
+}
+
+#search:focus {
+    outline: none;
+    border-color: #0AFF9D;
+    box-shadow: 0 0 8px #0AFF9D;
+}
+
+
+
+
+.shop-topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    font-family: "Press Start 2P", cursive;
+    color: #fff;
+}
+
+.shop-topbar #count {
+    color: #0AFF9D;
+}
+
+
+
+#shopMain {
+    background: #000;
+    padding: 20px;
+    border: 3px solid #fff;
+    box-shadow: 0 0 10px #0AFF9D33;
+}
+
+
+
+.empty {
+    background: #000;
+    color: #0AFF9D;
+    border: 2px dashed #fff;
+    padding: 20px;
+    font-family: "Press Start 2P";
+    font-size: 12px;
+}
+
+
+
+
+.mask-icon a.cart {
+    background: #0AFF9D;
+    color: #000;
+    border: 2px solid #fff;
+    font-family: "Press Start 2P";
+    padding: 6px;
+}
+
+.mask-icon a.cart:hover {
+    background: #fff;
+    color: #000;
+}
+
+
+
+.mask-icon {
+    pointer-events: none;
+}
+
+.mask-icon a {
+    pointer-events: auto;
+}
+
+
+
+body {
+    background: #000;
+    background-image: url("images/noise.png");
+    opacity: 0.97;
+}
+
+
+
+
+.why-text h5 {
+    background: #000 !important;
+    border: 3px solid #0AFFA0 !important; /* neon yeşili pixel border */
+    padding: 6px 12px;
+    display: inline-block;
+    width: auto;
+}
+
+
+.why-text h5 .new-price {
+    color: #0AFFA0 !important;
+    font-family: 'Press Start 2P', cursive;
+}
+
+
+.why-text h5 .old-price {
+    color: #ff5555 !important;
+    text-decoration: line-through;
+    opacity: 0.8;
+}
+
+
+.products-single:hover .why-text h5 {
+    background: #000 !important;
+    border-color: #0AFFA0 !important;
+}
+
+
+.products-single {
+    border: 2px solid #111 !important;
+}
+
+
+
+.products-single {
+    border: 2px solid #0AFFA0 !important;
+    background: #000;
+    box-shadow: inset 0 0 12px #0AFFA088;
+}
+
+
+.products-single:hover {
+    box-shadow: 0 0 14px #0AFFA0, inset 0 0 18px #0AFFA0;
+}
+
+
+.products-single img {
+    border-radius: 12px !important;
+    background: #000;
+}

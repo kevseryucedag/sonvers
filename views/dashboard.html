@@ -1,0 +1,168 @@
+<!-- ============================
+     DASHBOARD — SKATEX ADMIN
+============================= -->
+
+<div class="dashboard">
+
+    <h2 class="dash-title">YÖNETİM PANELİ</h2>
+    <p class="dash-subtitle">Hoş geldin Admin, bugün yönetmen gereken veriler aşağıda!</p>
+
+    <!-- METRİK KUTULARI -->
+    <div class="dashboard-grid">
+
+        <div class="dashboard-card pixel-box">
+            <h3>TOPLAM ÜRÜN</h3>
+            <p id="dash-total-products" class="dash-number">0</p>
+        </div>
+
+        <div class="dashboard-card pixel-box">
+            <h3>DUYURU SAYISI</h3>
+            <p id="dash-total-announcements" class="dash-number">0</p>
+        </div>
+
+        <div class="dashboard-card pixel-box">
+            <h3>SLIDER ÖĞELERİ</h3>
+            <p id="dash-total-slider" class="dash-number">0</p>
+        </div>
+
+        <div class="dashboard-card pixel-box">
+            <h3>BUGÜNKÜ ZİYARET</h3>
+            <p id="dash-visits" class="dash-number">0</p>
+        </div>
+
+    </div>
+
+    <!-- GRAFİK ALANI -->
+    <h2 class="dash-section-title">Grafikler</h2>
+
+    <div class="chart-section">
+
+        <div class="chart-box pixel-box">
+            <h3>Kategori Dağılımı</h3>
+            <canvas id="chart-categories"></canvas>
+        </div>
+
+        <div class="chart-box pixel-box">
+            <h3>Aylık Ziyaret Grafiği</h3>
+            <canvas id="chart-visits"></canvas>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ============================
+     DASHBOARD SCRIPTS
+============================= -->
+<script>
+window.onViewLoaded = function (view) {
+    if (view !== "dashboard") return;
+
+    /* ============================
+       GENEL ANİMASYON FONKSİYONU
+    ============================ */
+    function animateNumber(elementId, targetValue, duration = 1200) {
+        const el = document.getElementById(elementId);
+        let start = 0;
+        const stepTime = 15; // hız
+        const increment = targetValue / (duration / stepTime);
+
+        const interval = setInterval(() => {
+            start += increment;
+            if (start >= targetValue) {
+                start = targetValue;
+                clearInterval(interval);
+            }
+            el.textContent = Math.floor(start).toLocaleString();
+        }, stepTime);
+    }
+
+    /* ============================
+       ÜRÜN SAYISI
+    ============================ */
+    fetch("products.json")
+        .then(res => res.json())
+        .then(data => animateNumber("dash-total-products", data.length));
+
+
+    /* ============================
+       DUYURU SAYISI
+    ============================ */
+    fetch("duyurular.json")
+        .then(res => res.json())
+        .then(list => animateNumber("dash-total-announcements", list.length))
+        .catch(() => animateNumber("dash-total-announcements", 0));
+
+
+    /* ============================
+       SLIDER SAYISI
+    ============================ */
+    fetch("slider.json")
+        .then(res => res.json())
+        .then(list => animateNumber("dash-total-slider", list.length))
+        .catch(() => animateNumber("dash-total-slider", 3)); // fallback
+
+
+    /* ============================
+       BUGÜNKÜ ZİYARET (FAKE)
+    ============================ */
+    const todayVisits = Math.floor(Math.random() * 35000) + 5000;
+    animateNumber("dash-visits", todayVisits);
+
+
+    /* ============================
+       GRAFİKLER
+    ============================ */
+    function loadCharts() {
+        /* Kategori Dağılımı */
+        fetch("products.json")
+            .then(res => res.json())
+            .then(products => {
+                const cat = {};
+                products.forEach(p => {
+                    cat[p.category] = (cat[p.category] || 0) + 1;
+                });
+
+                new Chart(document.getElementById("chart-categories"), {
+                    type: "pie",
+                    data: {
+                        labels: Object.keys(cat),
+                        datasets: [{
+                            data: Object.values(cat),
+                            backgroundColor: ["#00ffcc","#00ffaa","#00e6aa","#00cc99","#009977"]
+                        }]
+                    }
+                });
+            });
+
+        /* Aylık ziyaret */
+        new Chart(document.getElementById("chart-visits"), {
+            type: "line",
+            data: {
+                labels: ["Ocak","Şubat","Mart","Nisan","Mayıs","Haziran"],
+                datasets: [{
+                    data: [12000, 18000, 14000, 25000, 20000, 32000],
+                    borderColor: "#00ffcc",
+                    backgroundColor: "rgba(0,255,204,0.12)",
+                    borderWidth: 3
+                }]
+            },
+            options: {
+                scales: {
+                    x: { ticks: { color: "#fff" } },
+                    y: { ticks: { color: "#fff" } }
+                }
+            }
+        });
+    }
+
+    loadCharts();
+};
+</script>
+
+
+<script>
+console.log("DASHBOARD SAYFASI YÜKLENDİ");
+console.log("Element var mı?", document.getElementById("dash-total-products"));
+</script>

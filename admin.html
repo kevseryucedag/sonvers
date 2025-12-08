@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<script>
+if (localStorage.getItem("skx_logged_in") !== "1") {
+    window.location.href = "login.html";
+}
+</script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skatex Admin Panel</title>
+
+    
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+    
+    <link rel="stylesheet" href="css/admin.css?v=1" />
+
+</head>
+<body>
+
+    
+    <div class="admin-wrapper">
+
+        
+        <aside class="admin-sidebar">
+            <div class="admin-logo">
+                SKATEX<br>ADMIN
+            </div>
+
+            <ul class="admin-menu">
+                <li data-view="dashboard" class="active">Dashboard</li>
+                <li data-view="products">Ürün Yönetimi</li>
+                <li data-view="announcements">Duyuru Yönetimi</li>
+                <li data-view="slider">Slider Yönetimi</li>
+                <li data-view="content">Sayfa İçerikleri</li>
+                <li data-view="messages">Mesaj Kutusu</li>
+                <li data-view="charts">Grafikler</li>
+                <li data-view="settings">Ayarlar</li>
+                <li class="logout-btn">Çıkış</li>
+            </ul>
+        </aside>
+
+
+        
+        <main class="admin-main">
+
+            
+            <header class="admin-topbar">
+                <h1 class="admin-title">Admin Panel</h1>
+
+                <div class="admin-profile">
+                    <span class="admin-name">Admin</span>
+                </div>
+            </header>
+
+            
+            <div id="admin-view" class="admin-view">
+                
+                Yükleniyor...
+            </div>
+
+        </main>
+
+    </div>
+
+
+    
+    <script src="js/admin.js?v=1"></script>
+
+</body>
+</html>

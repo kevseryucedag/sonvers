@@ -1,0 +1,164 @@
+<!-- =============================
+     DUYURU YÖNETİMİ — SKATEX ADMIN
+============================== -->
+
+<div>
+    <h2 class="dash-title">Duyuru Yönetimi</h2>
+    <p class="dash-subtitle">Yeni duyurular ekleyebilir, mevcut duyuruları yönetebilirsin.</p>
+
+    <!-- DUYURU EKLEME FORMU -->
+    <div class="pixel-box" style="padding:20px; margin-bottom:25px;">
+        <h3 style="font-family:'Press Start 2P'; color:#00ff99;">Yeni Duyuru Ekle</h3>
+
+        <form class="admin-form" id="announcement-add-form">
+
+            <label>Başlık</label>
+            <input type="text" id="a-title" required>
+
+            <label>İçerik</label>
+            <textarea id="a-content" rows="4" required></textarea>
+
+            <label>Dosya (PDF / Word / Resim)</label>
+            <input type="file" id="a-file">
+
+            <button type="submit">Duyuruyu Ekle</button>
+        </form>
+    </div>
+
+    <!-- DUYURU TABLOSU -->
+    <div class="pixel-box" style="padding:20px;">
+        <h3 style="font-family:'Press Start 2P'; color:#00ff99;">Duyuru Listesi</h3>
+
+        <table class="admin-table" id="ann-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Başlık</th>
+                    <th>Dosya</th>
+                    <th>Tarih</th>
+                    <th>Sil</th>
+                </tr>
+            </thead>
+            <tbody id="ann-table-body">
+                <!-- JS ile doldurulacak -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<!-- ======================================
+     DUYURULAR VIEW SCRIPTİ
+======================================= -->
+
+<script>
+window.onViewLoaded = function(view) {
+    if (view !== "announcements") return;
+
+    console.log("Announcements view initialized.");
+
+    /* ============================
+       DUYURU STORAGE SİSTEMİ
+    ============================ */
+
+    function loadAnnouncements() {
+        return JSON.parse(localStorage.getItem("admin_announcements") || "[]");
+    }
+
+    function saveAnnouncements(list) {
+        localStorage.setItem("admin_announcements", JSON.stringify(list));
+    }
+
+    // Eğer hiç yoksa, örnek bir duyuru ekle
+    function initAnnouncements() {
+        let list = loadAnnouncements();
+        if (list.length === 0) {
+            list = [
+                {
+                    id: Date.now(),
+                    title: "Skatex Yeni Sezon Ürünleri Geldi!",
+                    content: "Kış sezonu için yeni deck ve wheel modelleri eklendi.",
+                    file: null,
+                    date: new Date().toLocaleDateString()
+                }
+            ];
+            saveAnnouncements(list);
+        }
+    }
+
+    /* ============================
+       TABLOYU ÇİZ
+    ============================ */
+
+    function renderTable() {
+        const list = loadAnnouncements();
+        const tbody = document.getElementById("ann-table-body");
+
+        tbody.innerHTML = list.map(a => `
+            <tr>
+                <td>${a.id}</td>
+                <td>${a.title}</td>
+                <td>${a.file ? a.file : "-"}</td>
+                <td>${a.date}</td>
+                <td><button class="admin-delete-ann" data-id="${a.id}">Sil</button></td>
+            </tr>
+        `).join("");
+    }
+
+    /* ============================
+       DUYURU EKLEME
+    ============================ */
+
+    document.getElementById("announcement-add-form").addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const title = document.getElementById("a-title").value;
+        const content = document.getElementById("a-content").value;
+
+        const fileInput = document.getElementById("a-file");
+        let fileName = null;
+
+        if (fileInput.files.length > 0) {
+            fileName = fileInput.files[0].name; // gerçek upload yok → simülasyon
+        }
+
+        const list = loadAnnouncements();
+
+        list.push({
+            id: Date.now(),
+            title,
+            content,
+            file: fileName,
+            date: new Date().toLocaleDateString()
+        });
+
+        saveAnnouncements(list);
+
+        alert("Duyuru başarıyla eklendi!");
+        e.target.reset();
+        renderTable();
+    });
+
+    /* ============================
+       DUYURU SİLME
+    ============================ */
+
+    document.addEventListener("click", (e) => {
+        if (!e.target.classList.contains("admin-delete-ann")) return;
+
+        const id = e.target.dataset.id;
+        let list = loadAnnouncements();
+
+        list = list.filter(a => String(a.id) !== String(id));
+        saveAnnouncements(list);
+        renderTable();
+    });
+
+    /* ============================
+       İLK ÇALIŞMA
+    ============================ */
+
+    initAnnouncements();
+    renderTable();
+};
+</script>

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+   
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+    
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+   
+    <link rel="stylesheet" href="css/style.css">
+   
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <link rel="stylesheet" href="css/custom.css">
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+
+
+<style>
+/* GRID */
+.ann-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1100px;
+    margin: 50px auto;
+}
+
+/* Mobil */
+@media(max-width:768px){
+    .ann-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media(max-width:480px){
+    .ann-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+/* CARD */
+.ann-card {
+    background: #111;
+    border: 4px solid #ff7f00;
+    padding: 15px;
+    font-family: monospace;
+    color: #ff7f00;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.ann-card:hover {
+    background: #191919;
+}
+
+/* CARD IMAGE */
+.ann-img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    image-rendering: pixelated;
+    border-bottom: 4px solid #ff7f00;
+    margin-bottom: 10px;
+}
+
+/* MODAL */
+.modal-custom {
+    display: none;
+    position: fixed;
+    z-index: 999999;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.7);
+	
+}
+
+.modal-content-custom {
+    background: #111;
+    border: 4px solid #ff7f00;
+    width: 90%;
+    max-width: 600px;
+    padding: 20px;
+    color: #ff7f00;
+    font-family: monospace;
+    position: relative;
+}
+
+.close-modal {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    font-size: 26px;
+    cursor: pointer;
+    color: #ff7f00;
+}
+.close-modal:hover {
+    color: white;
+}
+
+/* MODAL IMAGE */
+.modal-img {
+    width: 100%;
+    border: 4px solid #ff7f00;
+    margin-bottom: 15px;
+    image-rendering: pixelated;
+}
+</style>
+
+</head>
+
+<body>
+
+   <div data-include="header.html"></div>
+           
+
+    
+
+
+
+
+
+<h1 style="text-align:center; color:#ffffff; font-family:monospace; margin-top:40px;">
+    Duyurular
+</h1>
+
+</h1>
+
+<div id="ann-container" class="ann-grid"></div>
+
+<script>
+const announcements = [
+    {
+        id: 0,
+        title: "Renkli zımparalarda %50",
+        text: "12-31 aralık tarihleri arasında yapacağın alışverişlerde renkli zımparalar %50 indirimli",
+        img: "images/ann1.jpg",
+        date: "2025-12-12"
+    },
+    {
+        id: 1,
+        title: "750 TL VE ÜZERİ ALIŞVERİŞLERDE KARGO BEDAVA!",
+        text: "12-31 Aralık Tarihleri arasında yapacağın 750 TL ve üzeri alışverişlerde kargo bedava",
+        img: "images/ann2.jpg",
+        date: "2025-12-10"
+    },
+    {
+        id: 2,
+        title: "Tüm siparişlere süpriz hediyeler",
+        text: "Vereceğin tüm siparişlerde ücretsiz hediyeler!",
+        img: "images/ann3.jpg",
+        date: "2025-12-05"
+    },
+    {
+        id: 3,
+        title: "Ut Enim Ad Minim",
+        text: "Word içeren duyuru.",
+        img: "images/ann4.jpg",
+        date: "2025-11-25"
+    },
+    {
+        id: 4,
+        title: "40lı sticker seti hediye!",
+        text: "Yapacağın 300tl ve üzeri tüm alışverişlerde 40lı sticker seti hediye!",
+        img: "images/ann5.jpg",
+        date: "2025-11-15"
+    }
+];
+</script>
+
+
+
+
+<div id="annModal" class="modal-custom">
+    <div class="modal-content-custom">
+
+        <span class="close-modal" onclick="closeAnn()">&times;</span>
+
+        <img id="mImage" class="modal-img">
+        <h2 id="mTitle"></h2>
+        <p id="mContent"></p>
+        <div id="mFiles"></div>
+
+    </div>
+</div>
+
+
+
+<script>
+const annData = [
+    {
+        title:"Renkli zımparalarda %50",
+        content:"12-31 aralık tarihleri arasında yapacağın alışverişlerde renkli zımparalar %50 indirimli",
+        image:"images/ann1.jpg",
+        files:["örnek.pdf"]
+    },
+    {
+        title:"750 TL VE ÜZERİ ALIŞVERİŞLERDE KARGO BEDAVA!",
+        content:"12-31 Aralık Tarihleri arasında yapacağın 750 TL ve üzeri alışverişlerde kargo bedava",
+        image:"images/ann2.jpg",
+        files:[]
+    },
+    {
+        title:"Tüm siparişlere süpriz hediyeler",
+        content:"Vereceğin tüm siparişlerde ücretsiz hediyeler!",
+        image:"images/ann3.jpg",
+        files:[]
+    },
+    {
+        title:"40lı sticker seti hediye!",
+        content:"Yapacağın 300tl ve üzeri tüm alışverişlerde 40lı sticker seti hediye!",
+        image:"images/ann4.jpg",
+        files:["rapor.docx"]
+    },
+    {
+        title:"Tüm kaykay tahtalarında zımpara hediye",
+        content:"12-31 Aralık tarihleri arasında geçerlidir",
+        image:"images/ann5.jpg",
+        files:["img1.jpg","img2.png"]
+    }
+];
+
+function openAnn(i){
+    const a = annData[i];
+
+    document.getElementById("mTitle").innerText = a.title;
+    document.getElementById("mContent").innerText = a.content;
+    document.getElementById("mImage").src = a.image;
+
+    let f = "";
+    a.files.forEach(file => f += `<p><a href="#">${file}</a></p>`);
+    document.getElementById("mFiles").innerHTML = f;
+
+    document.getElementById("annModal").style.display = "block";
+}
+
+function closeAnn(){
+    document.getElementById("annModal").style.display = "none";
+}
+</script>
+
+
+    
+	<div data-include="footer.html"></div>
+    
+
+    <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
+
+    <!--  js includedan call ediliyor ---- 
+	
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- ALL PLUGINS 
+    <script src="js/jquery.superslides.min.js"></script>
+    <script src="js/bootstrap-select.js"></script>
+    <script src="js/inewsticker.js"></script>
+    <script src="js/bootsnav.js"></script>
+    <script src="js/images-loded.min.js"></script>
+    <script src="js/isotope.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/baguetteBox.min.js"></script>
+    <script src="js/form-validator.min.js"></script>
+    <script src="js/contact-form-script.js"></script>
+    <script src="js/custom.js"></script> -->
+	<script src="include.js"></script>
+	
+	
+	
+	<script>
+function renderAnnouncements() {
+    
+    const sorted = announcements.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+    let html = "";
+
+    sorted.forEach(a => {
+        html += `
+            <div class="ann-card" onclick="openAnn(${a.id})">
+                <img src="${a.img}" class="ann-img">
+                <h3>${a.title}</h3>
+                <p>${a.text}</p>
+                <div class="ann-date">📅 ${new Date(a.date).toLocaleDateString("tr-TR")}</div>
+            </div>
+        `;
+    });
+
+    document.getElementById("ann-container").innerHTML = html;
+}
+
+
+
+
+renderAnnouncements();
+</script>
+
+	
+</body>
+
+</html>

@@ -1,0 +1,212 @@
+<div class="settings-page">
+
+    <h1 class="view-title">AYARLAR</h1>
+    <p class="settings-sub">Tema ve panel görünümünü buradan özelleştirebilirsin.</p>
+
+    <div class="settings-grid">
+
+        <!-- GERÇEK AYAR GRUBU -->
+        <div class="pixel-box setting-card">
+            <h3 class="setting-title">Tema Ayarları</h3>
+
+            <label>Glow Seviyesi</label>
+            <input type="range" id="set-glow" min="0" max="20">
+
+            <label>Tema Rengi</label>
+            <input type="color" id="set-theme">
+
+            <label>Font Boyutu</label>
+            <input type="range" id="set-font" min="10" max="22">
+
+            <label>Panel Genişliği</label>
+            <input type="range" id="set-width" min="900" max="1600">
+
+            <button class="save-btn" id="save-theme">Kaydet</button>
+        </div>
+
+        <!-- FAKE / GÖSTERİMLİ AYARLAR -->
+        <div class="pixel-box setting-card">
+            <h3 class="setting-title">Gelişmiş Görsel Ayarlar</h3>
+
+            <label>Pixel-Retro Efekti</label>
+            <select>
+                <option>Açık</option>
+                <option>Kapalı</option>
+                <option>Otomatik</option>
+            </select>
+
+            <label>Neon Parıltı Modu</label>
+            <select>
+                <option>Mint</option>
+                <option>Mavi Neon</option>
+                <option>Pembe Cyber</option>
+            </select>
+
+            <label>UI Yoğunluk</label>
+            <select>
+                <option>Normal</option>
+                <option>Compact</option>
+                <option>Geniş</option>
+            </select>
+
+            <label>Animasyon Hızı</label>
+            <input type="range" min="0" max="2" step="0.1">
+
+            <button class="fake-btn">Uygula</button>
+        </div>
+
+        <div class="pixel-box setting-card">
+            <h3 class="setting-title">Performans & Sistem</h3>
+
+            <label>Debug Modu</label>
+            <select>
+                <option>Kapalı</option>
+                <option>Açık</option>
+            </select>
+
+            <label>Script Sync Optimizasyonu</label>
+            <select>
+                <option>Otomatik</option>
+                <option>Force Sync</option>
+                <option>Async Mode</option>
+            </select>
+
+            <label>Cache Yönetimi</label>
+            <button class="fake-btn">Tarayıcı Cache Temizle</button>
+
+            <label>Panel Reset</label>
+            <button class="fake-btn danger">Tüm Ayarları Sıfırla</button>
+        </div>
+
+    </div>
+
+</div>
+
+<style>
+.settings-page { 
+    padding:20px; 
+    color:#fff; 
+    font-family:'Press Start 2P';
+}
+
+.view-title {
+    font-size:22px;
+    margin-bottom:10px;
+    text-shadow:0 0 10px #0aff0a;
+}
+
+.settings-sub {
+    font-size:11px;
+    opacity:.7;
+    margin-bottom:25px;
+}
+
+.settings-grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
+    gap:25px;
+}
+
+.setting-card {
+    padding:20px;
+}
+
+.setting-title {
+    font-size:14px;
+    margin-bottom:12px;
+    color:#00ff99;
+}
+
+.setting-card label {
+    font-size:11px;
+    color:#00ff99;
+    display:block;
+    margin-top:10px;
+}
+
+.setting-card input,
+.setting-card select {
+    width:100%;
+    margin-top:6px;
+    margin-bottom:10px;
+    padding:8px;
+    background:#000;
+    color:#0aff0a;
+    border:2px solid #0aff0a;
+    font-family:'Press Start 2P';
+    font-size:10px;
+}
+
+.save-btn {
+    padding:12px;
+    background:#0aff0a;
+    color:#000;
+    border:none;
+    width:100%;
+    margin-top:10px;
+    cursor:pointer;
+    font-size:12px;
+}
+
+.fake-btn {
+    padding:10px;
+    border:2px solid #444;
+    background:#0b0b0b;
+    color:#888;
+    cursor:pointer;
+    font-size:10px;
+    margin-top:10px;
+}
+
+.fake-btn:hover {
+    background:#111;
+}
+
+.fake-btn.danger {
+    border-color:#ff4444;
+    color:#ff4444;
+}
+</style>
+
+<script>
+/* =======================================================
+   GERÇEK ÇALIŞAN AYAR SİSTEMİ (localStorage)
+======================================================= */
+
+window.onViewLoaded = function(viewName){
+    if(viewName !== "settings") return;
+
+    console.log("%c[SETTINGS] Ayarlar paneli açık","color:#00ff99");
+
+    const glow = document.getElementById("set-glow");
+    const theme = document.getElementById("set-theme");
+    const font = document.getElementById("set-font");
+    const width = document.getElementById("set-width");
+    const saveBtn = document.getElementById("save-theme");
+
+    const load = () => {
+        glow.value = localStorage.getItem("skx_glow") || 10;
+        theme.value = localStorage.getItem("skx_theme") || "#00ff99";
+        font.value = localStorage.getItem("skx_font") || 12;
+        width.value = localStorage.getItem("skx_width") || 1200;
+
+        document.documentElement.style.setProperty("--glow", glow.value + "px");
+        document.documentElement.style.setProperty("--theme-color", theme.value);
+        document.documentElement.style.fontSize = font.value + "px";
+        document.body.style.maxWidth = width.value + "px";
+    };
+
+    const save = () => {
+        localStorage.setItem("skx_glow", glow.value);
+        localStorage.setItem("skx_theme", theme.value);
+        localStorage.setItem("skx_font", font.value);
+        localStorage.setItem("skx_width", width.value);
+
+        load();
+        alert("✓ Ayarlar kaydedildi");
+    };
+
+    saveBtn.onclick = save;
+    load();
+};
+</script>

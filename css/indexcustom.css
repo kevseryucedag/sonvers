@@ -1,0 +1,183 @@
+
+.attr-nav .fa,
+.attr-nav i {
+  color: #ffffff !important;
+}
+
+
+
+.navbar-nav > li.active > a,
+.navbar-nav > li > a:hover,
+.navbar-nav > li > a:focus,
+.navbar-nav > li.open > a,
+.navbar-nav > li.open > a:hover,
+.navbar-nav > li.open > a:focus {
+    color: #FF9F1C !important;
+}
+
+
+.navbar-nav > li.active > a .caret,
+.navbar-nav > li > a:hover .caret {
+    border-top-color: #FF9F1C !important;
+    border-bottom-color: #FF9F1C !important;
+}
+
+.marquee-container {
+    width: 100%;
+    background: #111;
+    border-bottom: 2px solid #FF9F1C; /* top slide renk kodu */
+    overflow: hidden;
+    position: relative;
+}
+
+.marquee {
+    display: inline-block;
+    white-space: nowrap;
+    padding: 8px 0;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 12px;
+    color: #FF9F1C;
+    animation: marquee 17s linear infinite;
+}
+
+@keyframes marquee {
+    0%   { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+.marquee {
+    text-shadow: 0 0 6px #FF9F1C;
+}
+
+
+ /* PAGE BACKGROUND */
+body {
+    background: #000 !important;
+}
+
+/* GRID */
+.ann-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 30px;
+}
+@media(min-width: 768px) {
+    .ann-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media(min-width: 1024px) {
+    .ann-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* CARD */
+.ann-card {
+    background: #111;
+    border: 4px solid #ff8c00; /* PIXEL BORDER */
+    padding: 20px;
+    cursor: pointer;
+    transition: 0.2s;
+    font-family: monospace;
+    color: #fff;
+}
+.ann-card:hover {
+    transform: scale(1.03);
+    background: #1a1a1a;
+}
+.ann-card h3 {
+    color: #ff8c00;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* MODAL */
+.modal-custom {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.85);
+    padding-top: 80px;
+}
+.modal-content-custom {
+    background: #111;
+    margin: auto;
+    padding: 25px;
+    border: 4px solid #ff8c00;
+    width: 60%;
+    color: #fff;
+    font-family: monospace;
+}
+.close-modal {
+    float: right;
+    font-size: 28px;
+    cursor: pointer;
+    color: #ff8c00;
+}
+.close-modal:hover {
+    color: #fff;
+}
+
+.modal {
+    z-index: 99999 !important;
+}
+.modal-content {
+    z-index: 100000 !important;
+    position: relative;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+:root{
+  --bg:#0b0b0b; --bg-2:#121212;
+  --fg:#f1f1f1; --muted:#9aa0a6;
+  --accent:#ff7f00; --accent-2:#00e5ff;
+  --border:2px; --radius:12px; --radius-sm:8px;
+  --shadow:0 8px 22px rgba(0,0,0,.35);
+  --font-h:"Bebas Neue", "Anton", system-ui;
+  --font-b:"Inter", "Roboto", system-ui;
+}
+h1,h2,h3{ font-family:var(--font-h); letter-spacing:.5px; text-transform:uppercase; }
+body{ background:var(--bg); color:var(--fg); font-family:var(--font-b); }
+.btn-primary{ background:var(--accent); color:#000; border:var(--border) solid var(--accent); border-radius:var(--radius); }
+.btn-primary:hover{ filter:brightness(1.05); transform:translateY(-1px); }
+.btn-outline{ background:transparent; color:var(--accent); border:var(--border) solid var(--accent); border-radius:var(--radius); }
+.card{ background:var(--bg-2); border:var(--border) solid #222; border-radius:var(--radius); box-shadow:var(--shadow); }
+.card:hover{ transform:translateY(-2px) rotate(-.3deg); border-color:var(--accent); }
+.badge-sticker{ border:var(--border) solid var(--fg); transform:rotate(-3deg); padding:.25rem .5rem; }
+.navbar a.nav-link{ text-transform:uppercase; letter-spacing:.6px; }
+.navbar a.nav-link:hover{ box-shadow: inset 0 -4px 0 var(--accent); }
+
+
+/* Mega Menü boyutu ve görünümü */
+.megamenu-content {
+    width: 450px !important;
+    padding: 15px 20px !important;
+    background-color: #ff9500 !important; 
+    border-radius: 6px;
+}
+
+/* İç kolonları daraltma */
+.megamenu-content .col-menu {
+    max-width: 100% !important;
+}
+
+/* Yazı renkleri */
+.megamenu-content a,
+.megamenu-content .title {
+    color: #fff !important;
+}
+

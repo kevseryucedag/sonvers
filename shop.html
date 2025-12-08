@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Skatex — Shop</title>
+
+  
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+
+  
+  <link rel="stylesheet" href="css/custom.css" />
+
+  
+  <link rel="stylesheet" href="css/shopcustom.css?v=10" />
+</head>
+ <body>
+<div class="main-top">
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <div class="text-slid-box">
+                    <div id="offer-box" class="carouselTicker">
+                        <ul class="offer-box">
+                            <li><i class="fab fa-opencart"></i> Yılbaşına özel tüm ürünlerde 10%!</li>
+                         
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <div class="custom-select-box">
+                    <select id="basic" class="selectpicker show-tick form-control" data-placeholder="Türkçe">
+                        <option>Türkçe</option>
+                        <option>English</option>
+                        <option>Japanese</option>
+                    </select>
+                </div>
+
+                <div class="right-phone-box">
+                    <p>Bizi ara :- <a href="#">0 (212) 213 66 39</a></p>
+                </div>
+
+                <div class="our-link">
+                    <ul>
+                        <li><a href="login.html">Hesabım</a></li>
+                        <li><a href="#">Konumumuz</a></li>
+                        <li><a href="#">Bize ulaşın</a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+<header class="main-header">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-default bootsnav">
+        <div class="container">
+
+            
+            <div class="navbar-header">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="index.html">
+                    <img src="images/logo.png" class="logo" alt="">
+                </a>
+            </div>
+
+            
+            <div class="collapse navbar-collapse" id="navbar-menu">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item active"><a class="nav-link" href="index.html">Ana Sayfa</a></li>
+
+                    <li class="dropdown megamenu-fw">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Ürünler</a>
+                        <ul class="dropdown-menu megamenu-content">
+                            <li>
+                                <div class="row">
+                                    <div class="col-menu col-md-3">
+                                        <div class="content">
+                                            <ul class="menu-col">
+                                                <li><a href="shop.html">Deckler</a></li>
+                                                <li><a href="shop.html">Trucklar</a></li>
+                                                <li><a href="shop.html">Fingerboards</a></li>
+                                                <li><a href="shop.html">Tekerler</a></li>
+                                               
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+
+                   
+                    <li class="nav-item"><a class="nav-link" href="about.html">Hakkımızda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="duyurular.html">Duyurular</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact-us.html">Bize ulaşın</a></li>
+                </ul>
+            </div>
+
+            
+            <div class="attr-nav">
+                <ul>
+                    <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
+
+                    <li class="side-menu">
+                        <a href="cart.html">
+                            <i class="fa fa-shopping-bag"></i>
+                            <span class="badge">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        
+        <div class="side">
+            <a href="#" class="close-side"><i class="fa fa-times"></i></a>
+
+            <div class="cart-box">
+                <ul id="side-cart" class="cart-list"></ul>
+            </div>
+        </div>
+
+    </nav>
+</header>
+
+
+
+<div class="top-search">
+    <div class="container">
+        <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-search"></i></span>
+            <input type="text" class="form-control" placeholder="Search">
+            <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
+        </div>
+    </div>
+</div>
+
+
+<div class="marquee-container">
+    <div class="marquee">
+        ⚡ Yeni sezon SkateX ürünlerinde %30 indirim! — Kışa özel deck modelleri stokta! — Trucks & Wheels kampanyası başladı! — 500₺ üzeri ücretsiz kargo! ⚡
+    </div>
+</div>
+<div class="shop-container">
+
+
+    <aside id="sidebar">
+
+        <h3 class="sidebar-title">Filtreler</h3>
+
+        <div class="filter-section">
+            <h4>Kategoriler</h4>
+            <button class="cat-btn active" data-cat="all">Tümü</button>
+            <button class="cat-btn" data-cat="deck">Deckler</button>
+            <button class="cat-btn" data-cat="truck">Trucklar</button>
+            <button class="cat-btn" data-cat="wheel">Tekerler</button>
+			<button class="cat-btn" data-cat="fingerboard">Fingerboards</button>
+			<button class="cat-btn" data-cat="bearings">Bearings</button>
+			<button class="cat-btn" data-cat="wax">Wax</button>
+            
+			
+			
+			
+        </div>
+
+        <div class="filter-section">
+            <h4>Fiyat</h4>
+            <div class="price-slider">
+                <input type="range" id="minPrice" min="0" max="6000" value="0" step="50">
+                <input type="range" id="maxPrice" min="0" max="6000" value="10000" step="50">
+            </div>
+            <div class="price-values">
+                <span id="min-label">₺0</span>
+                <span id="max-label">₺6000</span>
+            </div>
+        </div>
+
+        <div class="active-filters" id="activeFilters"></div>
+
+    </aside>
+
+
+    <main id="shopMain">
+        <div class="shop-topbar">
+            <input type="text" id="search" placeholder="Ürün Ara...">
+            <span id="count"></span> ürün
+        </div>
+
+        <div id="grid" class="row"></div>
+        <div id="empty" class="empty" style="display:none;">Sonuç bulunamadı.</div>
+    </main>
+
+</div>
+
+<script src="js/shopcustom.js?v=10"></script>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div data-include="footer.html"></div>
+
+<script src="include.js"></script>
+</body>
+</html>

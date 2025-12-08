@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <title>Skatex</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+    
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    
+    <link rel="stylesheet" href="css/style.css">
+    
+	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <link rel="stylesheet" href="css/custom.css">
+	<link rel="stylesheet" href="css/style.pixel-retro.css?v=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/themify-icons/0.1.2/css/themify-icons.css">
+
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+<style>
+/* Modal Arkaplan */
+.modal-ann {
+    display: none;
+    position: fixed;
+    z-index: 99999 !important;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: rgba(0,0,0,0.8);
+}
+
+/* Modal Kutusu */
+.modal-ann-content {
+    background: #111;
+    margin: 8% auto;
+    padding: 20px;
+    border: 4px solid #ff8c00;
+    width: 80%;
+    max-width: 600px;
+    color: #ff8c00;
+    font-family: monospace;
+}
+
+/* Kapatma */
+.modal-ann-close {
+    float: right;
+    font-size: 28px;
+    cursor: pointer;
+    color: #ff8c00;
+}
+.modal-ann-close:hover { color: #fff; }
+
+/* Grid Duyuru Kutuları */
+.ann-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap: 15px;
+    margin: 40px auto;
+    width: 90%;
+}
+.ann-card {
+    background:#222;
+    padding: 20px;
+    border: 3px solid #ff8c00;
+    color:#ff8c00;
+    cursor:pointer;
+    transition:0.2s;
+    font-family: monospace;
+}
+.ann-card:hover {
+    background:#333;
+    transform:scale(1.03);
+}
+</style>
+
+<script src="blog-data.js"></script>
+
+<script>
+    const container = document.querySelector("#blog-container");
+
+    function renderBlogs(order = "newest") {
+        container.innerHTML = "";
+
+        let posts = [...blogPosts];
+
+        if (order === "newest") {
+            posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+        } else if (order === "oldest") {
+            posts.sort((a, b) => new Date(a.date) - new Date(b.date));
+        }
+
+        posts.forEach(post => {
+            container.innerHTML += `
+                <div class="col-md-6 col-lg-4 col-xl-4">
+                    <div class="blog-box">
+                        <div class="blog-img">
+                            <img class="img-fluid" src="${post.image}" alt="">
+                        </div>
+                        <div class="blog-content">
+                            <div class="title-blog">
+                                <span class="blog-date">${post.date} • ${post.author}</span>
+                                <h3>${post.title}</h3>
+                                <p>${post.content.substring(0, 220)}...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+    }
+
+    // İlk yükleme
+    renderBlogs();
+
+    // Sıralama menüsü
+    document.querySelector("#blog-sort").addEventListener("change", function () {
+        renderBlogs(this.value);
+    });
+</script>
+
+<script>
+async function loadRandomProductsForSlider() {
+    const response = await fetch("products.json");
+    const products = await response.json();
+
+    // 3 rastgele ürün seçelim
+    const randomItems = products.sort(() => 0.5 - Math.random()).slice(0, 3);
+
+    const slider = document.getElementById("productSlider");
+
+    slider.innerHTML = randomItems.map(p => `
+        <li class="text slider-product-item" style="position:;">
+            <img src="${p.images[0]}" alt="" style="max-height:500px; object-fit:contain; margin:auto; display:block;">
+            
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+
+                        <h1 class="m-b-20" style="font-size:42px; color:white; text-shadow:none;">
+                            <strong>${p.title}</strong>
+                        </h1>
+
+                        <p class="m-b-20" style="color:#eee; font-size:20px;">
+                            ${p.price}
+                        </p>
+
+                        <p>
+                            <a class="btn hvr-hover" href="urun-detay.html?id=${p.id}">
+                                ÜRÜNE GİT
+                            </a>
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+
+        </li>
+    `).join("");
+ setTimeout(() => {
+    $('#slides-shop').superslides({
+        inherit_width_from: '.cover-slides',
+        inherit_height_from: '.cover-slides',
+        play: 4000,
+        animation: 'fade'
+    });
+}, 50);
+
+}
+
+document.addEventListener("DOMContentLoaded", loadRandomProductsForSlider);
+</script>
+
+
+
+
+
+
+</head>
+
+<body>
+
+   
+    <div class="main-top">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div class="text-slid-box">
+                        <div id="offer-box" class="carouselTicker">
+                            <ul class="offer-box">
+                                <li>
+                                    <i class="fab fa-opencart"></i> Sezon sonuna özel tüm ürünlerde %10 indirim
+                                </li>                               
+                              
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div class="custom-select-box">
+                        <select id="basic" class="selectpicker show-tick form-control" data-placeholder="Türkçe">
+						<option>Türkçe</option>
+						<option>English</option>
+						<option>Japanese</option>
+					</select>
+                    </div>
+                    <div class="right-phone-box">
+                        <p>Bizi ara :- <a href="#">0 (212) 213 66 39</a></p>
+                    </div>
+                    <div class="our-link">
+                        <ul>
+                            <li><a href="login.html">Hesabım</a></li>
+                            <li><a href="contact-us.html">Konumumuz</a></li>
+                            <li><a href="contact-us.html">Bize ulaşın</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+   
+    <header class="main-header">
+        
+        <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-default bootsnav">
+            <div class="container">
+              
+                <div class="navbar-header">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-bars"></i>
+                </button>
+                    <a class="navbar-brand" href="index.html"><img src="images/logo.png" class="logo" alt=""></a>
+                </div>
+                
+
+               
+                <div class="collapse navbar-collapse" id="navbar-menu">
+                    <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
+                        <li class="nav-item active"><a class="nav-link" href="index.html">Ana Sayfa</a></li>
+                        <li class="dropdown megamenu-fw">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Ürünler</a>
+                            <ul class="dropdown-menu megamenu-content" role="menu">
+                                <li>
+                                    <div class="row">
+                                        <div class="col-menu col-md-3">
+                                                                                       <div class="content">
+                                                <ul class="menu-col">
+                                                    <li><a href="shop.html">Deckler</a></li>
+                                                    <li><a href="shop.html">Trucklar</a></li>
+                                                    <li><a href="shop.html">Fingerboards</a></li>
+                                                    <li><a href="shop.html">Tekerler</a></li>
+													<li><a href="shop.html">Tekstil</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                       
+                                    
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">SHOP</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="cart.html">Sepet</a></li>
+                                <li><a href="checkout.html">Ödeme</a></li>
+                                <li><a href="my-account.html">Hesabım</a></li>
+                                <li><a href="wishlist.html">Dilek listesi</a></li>
+                                <li><a href="shop-detail.html">Satın alım</a></li>
+                            </ul>
+                        </li>
+						<li class="nav-item"><a class="nav-link" href="about.html">Hakkımızda</a></li>
+                        <li class="nav-item"><a class="nav-link" href="duyurular.html">duyurular</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact-us.html">Bize ulaşın</a></li>
+                    </ul>
+                </div>
+                
+
+               
+               <div class="attr-nav">
+    <ul>
+        <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
+
+        <li class="side-menu">
+            <a href="#">
+                <i class="fa fa-shopping-bag"></i>
+                <span class="badge">0</span>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+</div> 
+
+
+<div class="side">
+    <a href="#" class="close-side"><i class="fa fa-times"></i></a>
+
+    <div class="cart-box">
+        <ul id="side-cart" class="cart-list"></ul>
+    </div>
+</div>
+
+
+            </div>
+      
+        </nav>
+   
+    </header>
+ 
+
+    
+    <div class="top-search">
+        <div class="container">
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                <input type="text" class="form-control" placeholder="Search">
+                <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
+            </div>
+        </div>
+    </div>
+    
+	
+<div class="marquee-container">
+    <div class="marquee">
+        ⚡ Yeni sezon SkateX ürünlerinde %30 indirim! — Kışa özel deck modelleri stokta! — Trucks & Wheels kampanyası başladı! — 500₺ üzeri ücretsiz kargo! ⚡
+    </div>
+</div>
+
+    
+<div id="slides-shop" class="cover-slides">
+    <ul id="productSlider" class="slides-container">
+        <!-- Slider itemları JS ile eklenecek -->
+    </ul>
+
+    <div class="slides-navigation">
+        <a href="#" class="prev"><i class="fa fa-angle-left"></i></a>
+        <a href="#" class="next"><i class="fa fa-angle-right"></i></a>
+    </div>
+</div>
+
+
+
+<h1 class="text-center mt-4" style="color:#fcfafa; font-family:monospace;">
+    Duyurular
+</h1>
+
+
+<div class="ann-grid">
+    <div class="ann-card" onclick="openAnn(0)">
+        <h3>Renkli zımparalarda %50</h3>
+        <p>12-31 aralık tarihleri arasında yapacağın alışverişlerde renkli zımparalar %50 indirimli</p>
+    </div>
+
+    <div class="ann-card" onclick="openAnn(1)">
+        <h3>750 TL VE ÜZERİ ALIŞVERİŞLERDE KARGO BEDAVA!</h3>
+        <p>12-31 Aralık Tarihleri arasında yapacağın 750 TL ve üzeri alışverişlerde kargo bedava</p>
+    </div>
+
+    <div class="ann-card" onclick="openAnn(2)">
+        <h3>Tüm siparişlere süpriz hediyeler</h3>
+        <p>Vereceğin tüm siparişlerde ücretsiz hediyeler!</p>
+    </div>
+
+    <div class="ann-card" onclick="openAnn(3)">
+        <h3>40lı sticker seti hediye!</h3>
+        <p>Yapacağın 300tl ve üzeri tüm alışverişlerde 40lı sticker seti hediye!</p>
+    </div>
+
+    <div class="ann-card" onclick="openAnn(4)">
+        <h3>Tüm kaykay tahtalarında zımpara hediye</h3>
+        <p>12-31 Aralık tarihleri arasında geçerlidir</p>
+    </div>
+</div>
+
+
+<div class="text-center">
+    <a href="duyurular.html" class="btn hvr-hover" 
+       style="background:#ff8c00; border:2px solid #ff8c00;">
+        Daha Fazla
+    </a>
+</div>
+
+
+
+
+    
+    <div class="categories-shop">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="shop-cat-box">
+                        <img class="img-fluid" src="images/t-shirts-img.jpg" alt="" />
+                        <a class="btn hvr-hover" href="shop.html">Deckler</a>
+                    </div>
+                    <div class="shop-cat-box">
+                        <img class="img-fluid" src="images/shirt-img.jpg" alt="" />
+                        <a class="btn hvr-hover" href="shop.html">Fingerboards</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="shop-cat-box">
+                        <img class="img-fluid" src="images/wallet-img.jpg" alt="" />
+                        <a class="btn hvr-hover" href="shop.html">Bearings</a>
+                    </div>
+                    <div class="shop-cat-box">
+                        <img class="img-fluid" src="images/women-bag-img.jpg" alt="" />
+                        <a class="btn hvr-hover" href="shop.html">Trucklar</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="shop-cat-box">
+                        <img class="img-fluid" src="images/shoes-img.jpg" alt="" />
+                        <a class="btn hvr-hover" href="shop.html">Tekerler</a>
+                    </div>
+                    <div class="shop-cat-box">
+                        <img class="img-fluid" src="images/women-shoes-img.jpg" alt="" />
+                        <a class="btn hvr-hover" href="shop.html">Wax n stuff</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+   
+    <div class="products-box">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="title-all text-center">
+                        <h1>SEZON SONU İNDİRİMLERİNİ KAÇIRMA!</h1>
+                        <p>Yeni yıla özel en sevilen ürünlerde inanılmaz indirimler! </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="special-menu text-center">
+                        <div class="button-group filter-button-group">
+                            <button class="active" data-filter="*">Tümü</button>
+                            <button data-filter=".top-featured">En çok satanlar</button>
+                            <button data-filter=".best-seller">Favoriler</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row special-list">
+                <div class="col-lg-3 col-md-6 special-grid best-seller">
+                    <div class="products-single fix">
+                        <div class="box-img-hover">
+                            <div class="type-lb">
+                                <p class="sale">Tükenmek Üzere!</p>
+                            </div>
+                            <img src="images/img-pro-01.jpg" class="img-fluid" alt="Image">
+                            <div class="mask-icon">
+                                <ul>
+                                    <li><a href="shop.html" data-toggle="tooltip" data-placement="right" title="Tümünü gör"><i class="fas fa-eye"></i></a></li>
+                                    
+                                </ul>
+                                <a class="cart" href="shop.html">Görüntüle</a>
+                            </div>
+                        </div>
+                        <div class="why-text">
+                            <h4>Combatant Deckler</h4>
+                            <h5> Tükenmek Üzere!</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 special-grid top-featured">
+                    <div class="products-single fix">
+                        <div class="box-img-hover">
+                            <div class="type-lb">
+                                <p class="sale">Tükenmek Üzere!</p>
+                            </div>
+                            <img src="images/img-pro-02.jpg" class="img-fluid" alt="Image">
+                            <div class="mask-icon">
+                                <ul>
+                                    <li><a href="shop.html" data-toggle="tooltip" data-placement="right" title="Tümünü gör"><i class="fas fa-eye"></i></a></li>
+                                    
+                                </ul>
+                                <a class="cart" href="shop.html">Görüntüle</a>
+                            </div>
+                        </div>
+                        <div class="why-text">
+                            <h4>Horn Complete seriler</h4>
+                            <h5>Tükenmek Üzere!</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 special-grid top-featured">
+                    <div class="products-single fix">
+                        <div class="box-img-hover">
+                            <div class="type-lb">
+                                <p class="sale">Tükenmek Üzere!</p>
+                            </div>
+                            <img src="images/img-pro-03.jpg" class="img-fluid" alt="Image">
+                            <div class="mask-icon">
+                                <ul>
+                                    <li><a href="shop.html" data-toggle="tooltip" data-placement="right" title="Tümünü gör"><i class="fas fa-eye"></i></a></li>
+                                    
+                                </ul>
+                                <a class="cart" href="shop.html">Görüntüle</a>
+                            </div>
+                        </div>
+                        <div class="why-text">
+                           <h4>Complete Kaykaylar %35 İndirimde</h4>
+                            <h5> Tükenmek Üzere!</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 special-grid best-seller">
+                    <div class="products-single fix">
+                        <div class="box-img-hover">
+                            <div class="type-lb">
+                                <p class="sale">Tükenmek Üzere!</p>
+                            </div>
+                            <img src="images/img-pro-04.jpg" class="img-fluid" alt="Image">
+                            <div class="mask-icon">
+                                <ul>
+                                    <li><a href="shop.html" data-toggle="tooltip" data-placement="right" title="Tümünü gör"><i class="fas fa-eye"></i></a></li>
+                                    
+                                </ul>
+                                <a class="cart" href="shop.html">Görüntüle</a>
+                            </div>
+                        </div>
+                        <div class="why-text">
+                            <h4>RedZ bushing set </h4>
+                            <h5> Tükenmek Üzere!</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+
+    
+    <div class="latest-blog">
+	
+        <div class="container">
+            <div class="row">
+			
+                <div class="col-lg-12">
+                    <div class="title-all text-center">
+                        <h1>Son paylaşımlar</h1>
+                        <p></p>
+                    </div>
+                </div>
+				<div class="row mb-4">
+   <div class="row mb-4">
+    <div class="col-lg-12 d-flex justify-content-between align-items-center">
+        <h2 class="mb-0">Blog Yazıları</h2>
+        <select id="blog-sort" class="form-control" style="max-width: 200px;">
+            <option value="newest">En Yeni</option>
+            <option value="oldest">En Eski</option>
+        </select>
+    </div>
+</div>
+
+<div class="row" id="blog-container"></div>
+
+
+        </select>
+    </div>
+</div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-lg-4 col-xl-4">
+                    <div class="blog-box">
+                        <div class="blog-img">
+                            <img class="img-fluid" src="images/blog-img.jpg" alt="" />
+                        </div>
+                        <div class="blog-content">
+                            <div class="title-blog">
+							<span class="blog-date">2025-01-14 • Admin</span>
+
+                                <h3>Truck kaykay dingili ne işe yarar ve hangi parçalardan oluşur?</h3>
+                                <p>Truck, kaykayın tahta ve tekerleklerini birleştiren metal aksamdır. Dingil olarak da adlandırılır.
+
+
+Bir kaykayda ön ve arka kısımda olmak üzere 2 adet truck vardır. Truckların görevlerinden biri sürüş yapabilmemizi yani kaykayla ilerleyebilmemizi sağlayan tekerleklerimizi takabilmemizi sağlar. Ayrıca trucklar ortasındaki bushinglerin sayesinde kaykayda manevra ve caddede slalom yapabilmemizi  sağlar. Trucklar, kaykayın en kompleks parçasıdır ve birçok parçanın bir araya gelmesi sonucu oluşur.
+
+
+Truckları oluşturan küçük parçaların isimleri;
+
+
+Axle “Dingil” 
+
+Hanger “Askı” 
+
+Bushing “Domates” 
+
+Kingpin 
+
+Baseplate “Taban Plakası” 
+
+Pivot Kap </p>
+                            </div>
+                            <ul class="option-blog">
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 col-xl-4">
+                    <div class="blog-box">
+                        <div class="blog-img">
+                            <img class="img-fluid" src="images/blog-img-01.jpg" alt="" />
+                        </div>
+                        <div class="blog-content">
+                            <div class="title-blog">
+							<span class="blog-date">2025-01-10 • Admin</span>
+                                <h3>Riser pad nedir, ne işe yarar ?</h3>
+                                <p>Riser Pad, kelime anlamı gereği "yükseltici ped" olarak geçer ve eğer ki trucklarınızın yüksekliği sizin için yeterli değilse, tahta ve truckların arasına ekleyebileceğiniz ek bir parçadır.
+
+
+Ayrıca en önemli faydalarından biride, plastik yapısı gereği ani darbelerin enerjisini de emdiği için şok emici ped görevide görür ve tahtanızın ömrünü uzatarak dizlerinize binen yükü azaltır.
+
+
+Bir riser pad alırken en çok dikkat edilmesi gereken noktaysa vidalarınızın uzunluğudur. Eğer alacağınız riser pad, vidalarınızın boyuyla uyumlu değilse aynı anda uzun vida seti de almanız gerekecektir. Riser pad modelleri için aşağıdaki linki inceleyebilirsiniz.</p>
+                            </div>
+                            <ul class="option-blog">
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 col-xl-4">
+                    <div class="blog-box">
+                        <div class="blog-img">
+                            <img class="img-fluid" src="images/blog-img-02.jpg" alt="" />
+                        </div>
+                        <div class="blog-content">
+                            <div class="title-blog">
+							<span class="blog-date">2025-01-01 • Admin</span>
+                                <h3>Kaykay rulmanında abec değeri ne anlama geliyor ?</h3>
+                                <p>ABEC, “Annular Bearing Engineering Committee” yani “Dairesel Rulman Mühendisleri Komitesi” anlamına gelir. Bu comite, rulmanların hassasiyet ve tolerans derecesini belirler.
+
+Tolerans denilen ifade de iki bilye arasındaki boşluğu tanımlar ve boşluk ne kadar büyükse rulman o kadar hızlı döner. Ama hızı arttıkça dayanıklılığı da azalır.
+
+ABEC derecelendirmeleri yalnızca tek sayılardır ve ABEC 1 ile başlar. Abec 3, Abec 5, Abec 7, Abec 9 ve Abec 11 olarak sınıflandırılır.
+
+</p>
+                            </div>
+                            <ul class="option-blog">
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+
+    
+   
+                  
+<div id="annModal" class="modal-ann">
+    <div class="modal-ann-content">
+        <span class="modal-ann-close" onclick="closeAnn()">&times;</span>
+        <h2 id="mTitle"></h2>
+        <p id="mContent"></p>
+        <div id="mFiles"></div>
+    </div>
+</div>
+
+
+    <!-- Start Footer  -->
+    <footer>
+        <div class="footer-main">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="footer-widget">
+                            <h4>Skatex hakkında</h4>
+                            <p>Amacımız, Türkiye’de kaykay kültürünü yaşatmak ve bu kültürü daha çok insana ulaştırmak.
+                                </p>
+                            <ul>
+                                <li><a href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fab fa-google-plus" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fab fa-whatsapp" aria-hidden="true"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="footer-link">
+                            <h4>Bilgi</h4>
+                            <ul>
+                                <li><a href="about.html">HAKKIMIZDA</a></li>
+                                <li><a href="istatistikler.html">ISTATISTIKLER</a></li>
+                                <li><a href="#">Our Sitemap</a></li>
+                                <li><a href="#">Şartlar &amp; Koşullar</a></li>
+                                <li><a href="#">Gizlilik politikamız</a></li>
+                                <li><a href="#">Kargo bilgisi</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="footer-link-contact">
+                            <h4>Bize Ulaşın</h4>
+                            <ul>
+                                <li>
+                                    <p><i class="fas fa-map-marker-alt"></i>Caferağa, Sakız Gülü Sk.
+No:19, 34710,
+Kadıköy/İstanbul<br>br> </p>
+                                </li>
+                                <li>
+                                    <p><i class="fas fa-phone-square"></i>Phone: <a href="tel: 0 (212) 213 66 35 ">0 (212) 213 66 39 </a></p>
+                                </li>
+                                <li>
+                                    <p><i class="fas fa-envelope"></i>Email: <a href="mailto:contactinfo@gmail.com">skatex@gmail.com</a></p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+
+   
+    <div class="footer-copyright">
+        <p class="footer-company">Tüm Hakları Saklıdır &copy; 2025 <a href="#">Skatex</a> Design By :
+            <a href="https://html.design/">html design</a></p>
+    </div>
+   
+
+    <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
+	
+	
+	
+	
+	
+	<script>
+const annData = [
+    { title:"renkli zımparalarda %50", content:"açıklaması...", files:["example.pdf"] },
+    { title:"750tl üstü kargo bedava", content:"Daha detaylı açıklama...", files:[] },
+    { title:"Süpriz hediyeler", content:"Ek dosya yok.", files:[] },
+    { title:"40lı sticker hediye", content:"Word dokümanı içerir.", files:["rapor.docx"] },
+    { title:"Deck + zımpara ücretsiz", content:"Resim ekleri içerir.", files:["img1.jpg","img2.png"] }
+];
+
+function openAnn(i){
+    const a = annData[i];
+    document.getElementById("mTitle").innerText = a.title;
+    document.getElementById("mContent").innerText = a.content;
+
+    let out = "";
+    a.files.forEach(f => out += `<p><a href="#">${f}</a></p>`);
+    document.getElementById("mFiles").innerHTML = out;
+
+    document.getElementById("annModal").style.display = "block";
+}
+
+function closeAnn(){
+    document.getElementById("annModal").style.display = "none";
+}
+</script>
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+    
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    
+    <script src="js/jquery.superslides.min.js"></script> 
+    <script src="js/bootstrap-select.js"></script>
+    <script src="js/inewsticker.js"></script>
+    <script src="js/bootsnav.js"></script>
+    <script src="js/images-loded.min.js"></script>
+    <script src="js/isotope.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/baguetteBox.min.js"></script>
+    <script src="js/form-validator.min.js"></script>
+    <script src="js/contact-form-script.js"></script>
+    <script src="js/custom.js"></script>
+	<script src="js/cart.js"></script>
+	
+	<script>
+const announcements = [
+  {
+    title: "Lorem Ipsum Dolor Sit Amet",
+    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae urna sed velit bibendum tristique.",
+    files: ["lorem.pdf", "dolor.docx", "image1.jpg"]
+  },
+  {
+    title: "Consectetur Adipiscing Elit",
+    content: "Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    files: ["elit.pdf"]
+  },
+  {
+    title: "Sed Do Eiusmod Tempor",
+    content: "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+    files: []
+  },
+  {
+    title: "Ut Enim Ad Minim Veniam",
+    content: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    files: ["veniam.docx"]
+  },
+  {
+    title: "Duis Aute Irure Dolor",
+    content: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    files: ["sample1.jpg", "sample2.png"]
+  }
+];
+
+function openAnnouncement(index) {
+  const a = announcements[index];
+  document.getElementById("modalTitle").innerText = a.title;
+  document.getElementById("modalContent").innerText = a.content;
+
+  let fileHtml = "";
+  a.files.forEach(f => {
+    fileHtml += `<p><a href="#">${f}</a></p>`;
+  });
+
+  document.getElementById("modalFiles").innerHTML = fileHtml;
+  document.getElementById("announcementModal").style.display = "block";
+}
+
+function closeAnnouncement() {
+  document.getElementById("announcementModal").style.display = "none";
+}
+</script>
+
+
+
+
+
+<div id="announcementModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeAnnouncement()">&times;</span>
+    <h3 id="modalTitle"></h3>
+    <p id="modalContent"></p>
+    <div id="modalFiles"></div>
+  </div>
+</div>
+
+</body>
+</html>

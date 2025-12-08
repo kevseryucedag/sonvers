@@ -1,0 +1,147 @@
+<div class="dashboard">
+
+    <h1 class="dash-title">YÖNETİM PANELİ</h1>
+    <p class="dash-sub">Hoş geldin, Admin.</p>
+
+    <!-- ISTATISTIK KARTLARI -->
+    <div class="dash-cards">
+
+        <div class="dash-card">
+            <h3>Toplam Ürün</h3>
+            <p id="stat-products">0</p>
+        </div>
+
+        <div class="dash-card">
+            <h3>Duyurular</h3>
+            <p id="stat-ann">0</p>
+        </div>
+
+        <div class="dash-card">
+            <h3>Mesajlar</h3>
+            <p id="stat-msg">0</p>
+        </div>
+
+        <div class="dash-card">
+            <h3>Bugünkü Ziyaret</h3>
+            <p id="stat-visits">128</p>
+        </div>
+
+    </div>
+
+    <!-- GRAFIKLER -->
+    <div class="dash-charts">
+
+        <div class="chart-box">
+            <h2>Ürün Dağılımı</h2>
+            <canvas id="chart-products"></canvas>
+        </div>
+
+        <div class="chart-box">
+            <h2>Aylık Ziyaret Grafiği</h2>
+            <canvas id="chart-visits"></canvas>
+        </div>
+
+    </div>
+
+</div>
+
+<style>
+.dashboard { padding:20px; color:#fff; font-family:'Press Start 2P'; }
+.dash-title { font-size:24px; margin-bottom:5px; text-shadow:0 0 10px #0aff0a; }
+.dash-sub { font-size:12px; opacity:.7; margin-bottom:25px; }
+
+.dash-cards {
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+.dash-card {
+    flex:1;
+    min-width:180px;
+    background:#0b0b0b;
+    border:2px solid #0aff0a;
+    padding:20px;
+    text-align:center;
+}
+.dash-card h3 { font-size:12px; margin-bottom:10px; }
+.dash-card p { font-size:20px; color:#0aff0a; }
+
+.dash-charts {
+    display:flex;
+    gap:25px;
+    margin-top:30px;
+    flex-wrap:wrap;
+}
+.chart-box {
+    flex:1;
+    min-width:320px;
+    background:#000;
+    border:2px solid #0aff0a;
+    padding:20px;
+}
+.chart-box h2 { font-size:14px; margin-bottom:10px; }
+</style>
+
+
+<script>
+/* =======================================================
+   DASHBOARD GRAFIKLER & ISTATISTIKLER
+======================================================== */
+
+window.onViewLoaded = async function(view){
+    if(view !== "dashboard") return;
+
+    console.log("%c[DASHBOARD] Yüklendi", "color:#0aff0a");
+
+    /* ----- ISTATISTIKLER ----- */
+    const products = JSON.parse(localStorage.getItem("skx_products") || "[]");
+    const anns = JSON.parse(localStorage.getItem("skx_announcements") || "[]");
+    const msgs = JSON.parse(localStorage.getItem("skx_messages") || "[]");
+
+    document.getElementById("stat-products").textContent = products.length;
+    document.getElementById("stat-ann").textContent = anns.length;
+    document.getElementById("stat-msg").textContent = msgs.length;
+
+
+    /* ----- GRAFIK #1: ÜRÜN KATEGORI DAGILIMI ----- */
+    const categoryCount = {};
+    products.forEach(p => {
+        categoryCount[p.category] = (categoryCount[p.category] || 0) + 1;
+    });
+
+    const ctx1 = document.getElementById("chart-products").getContext("2d");
+    new Chart(ctx1, {
+        type: "doughnut",
+        data: {
+            labels: Object.keys(categoryCount),
+            datasets: [{
+                data: Object.values(categoryCount),
+                backgroundColor: [
+                    "#0aff0a", "#00ccff", "#ffaa00", "#ff0066", "#ffffff"
+                ]
+            }]
+        },
+        options: { plugins:{legend:{labels:{color:"#fff"}}} }
+    });
+
+
+    /* ----- GRAFIK #2: AYLIK ZIYARET ----- */
+    const ctx2 = document.getElementById("chart-visits").getContext("2d");
+    new Chart(ctx2, {
+        type: "line",
+        data: {
+            labels: ["Oca","Şub","Mar","Nis","May","Haz","Tem","Ağu","Eyl","Eki","Kas","Ara"],
+            datasets:[{
+                label:"Ziyaret",
+                data:[320,400,380,500,620,700,650,720,680,750,820,910],
+                borderColor:"#0aff0a",
+                backgroundColor:"#0aff0a44",
+                fill:true,
+                tension:0.3
+            }]
+        },
+        options: { scales:{ x:{ticks:{color:"#fff"}}, y:{ticks:{color:"#fff"}} } }
+    });
+
+};
+</script>

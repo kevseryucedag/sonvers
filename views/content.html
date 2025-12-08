@@ -1,0 +1,160 @@
+<div class="content-page">
+
+    <h1 class="view-title">SAYFA İÇERİĞİ YÖNETİMİ</h1>
+
+    <div class="content-wrapper">
+
+        <!-- SOL SEKMELER -->
+        <div class="content-tabs">
+            <button class="tab-btn active" data-key="about">Hakkımızda</button>
+            <button class="tab-btn" data-key="mission">Misyon & Vizyon</button>
+            <button class="tab-btn" data-key="units">Birimler</button>
+            <button class="tab-btn" data-key="products">Ürünlerimiz</button>
+            <button class="tab-btn" data-key="contact">İletişim Açıklaması</button>
+        </div>
+
+        <!-- SAĞ METİN EDİTÖRÜ -->
+        <div class="content-editor">
+            <textarea id="content-editor"></textarea>
+
+            <button id="save-content" class="save-btn">
+                KAYDET
+            </button>
+
+            <p id="content-status" class="status-text"></p>
+        </div>
+
+    </div>
+
+</div>
+
+<style>
+/* ANA SAYFA BLOĞU */
+.content-page {
+    padding: 20px;
+    color: #fff;
+    font-family: 'Press Start 2P';
+}
+
+.view-title {
+    font-size: 20px;
+    margin-bottom: 25px;
+    text-shadow: 0 0 8px #0aff0a;
+}
+
+/* SOL MENÜ */
+.content-wrapper {
+    display: flex;
+    gap: 25px;
+}
+
+.content-tabs {
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.tab-btn {
+    background: #0b0b0b;
+    border: 2px solid #0aff0a;
+    padding: 12px;
+    font-size: 11px;
+    color: #0aff0a;
+    cursor: pointer;
+    text-align: left;
+    transition: 0.15s;
+}
+
+.tab-btn:hover {
+    background: #0aff0a22;
+}
+
+.tab-btn.active {
+    background: #0aff0a;
+    color: #000;
+}
+
+/* SAĞ EDITÖR */
+.content-editor {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+#content-editor {
+    background: #000;
+    border: 2px solid #0aff0a;
+    padding: 15px;
+    height: 380px;
+    resize: none;
+    color: #0aff0a;
+    font-family: 'Press Start 2P';
+    font-size: 11px;
+}
+
+.save-btn {
+    margin-top: 15px;
+    padding: 12px;
+    background: #0aff0a;
+    color: #000;
+    border: none;
+    cursor: pointer;
+    font-size: 11px;
+}
+
+.status-text {
+    margin-top: 10px;
+    font-size: 11px;
+}
+</style>
+
+<script>
+/* =======================================================
+   CONTENT MANAGER — LOCALSTORAGE CMS
+======================================================= */
+
+window.onViewLoaded = (viewName) => {
+    if (viewName !== "content") return;
+
+    console.log("%c[CONTENT] İçerik yönetimi aktif", "color:#0aff0a");
+
+    const editor = document.getElementById("content-editor");
+    const saveBtn = document.getElementById("save-content");
+    const status = document.getElementById("content-status");
+
+    let currentKey = "about";
+
+    /* --- SEKME DEĞİŞTİRME --- */
+    document.querySelectorAll(".tab-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+
+            document.querySelectorAll(".tab-btn").forEach(t => t.classList.remove("active"));
+            btn.classList.add("active");
+
+            currentKey = btn.getAttribute("data-key");
+            loadContent();
+        });
+    });
+
+    /* --- İÇERİK YÜKLEME --- */
+    function loadContent() {
+        const saved = localStorage.getItem("skx_page_" + currentKey) || "";
+        editor.value = saved;
+        status.textContent = "";
+    }
+
+    /* --- KAYDETME --- */
+    saveBtn.addEventListener("click", () => {
+        localStorage.setItem("skx_page_" + currentKey, editor.value);
+
+        status.textContent = "✓ Kaydedildi";
+        status.style.color = "#0aff0a";
+
+        setTimeout(() => status.textContent = "", 1500);
+    });
+
+    // İlk yükleme
+    loadContent();
+};
+</script>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>Skatex Admin</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+<style>
+body {
+    background:#000;
+    color:#0aff0a;
+    font-family:'Press Start 2P';
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    overflow:hidden;
+}
+
+.login-box {
+    width: 420px;
+    padding:30px;
+    border:3px solid #0aff0a;
+    background:#0c0c0c;
+    text-align:center;
+    box-shadow:0 0 20px #0aff0a55;
+}
+
+.login-title {
+    font-size:18px;
+    margin-bottom:25px;
+    text-shadow:0 0 8px #0aff0a;
+}
+
+input {
+    width:90%;
+    padding:12px;
+    margin:10px 0;
+    background:#000;
+    border:2px solid #0aff0a;
+    color:#0aff0a;
+    font-family:'Press Start 2P';
+    font-size:12px;
+}
+
+button {
+    width:95%;
+    padding:12px;
+    margin-top:15px;
+    background:#0aff0a;
+    color:#000;
+    border:none;
+    cursor:pointer;
+    font-size:12px;
+}
+
+.error {
+    margin-top:15px;
+    color:#ff4444;
+    display:none;
+}
+
+.glitch {
+    animation: glitch 0.2s infinite;
+}
+
+@keyframes glitch {
+    0% { text-shadow:2px 0 red; }
+    25% { text-shadow:-2px 0 blue; }
+    50% { text-shadow:2px 0 magenta; }
+    75% { text-shadow:-2px 0 cyan; }
+    100% { text-shadow:2px 0 red; }
+}
+<style>
+#home-btn {
+    margin-top: 15px;
+    width: 100%;
+    padding: 10px;
+    background: transparent;
+    border: 3px solid #00ffcc;
+    color: #00ffcc;
+    font-family: 'Press Start 2P';
+    font-size: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#home-btn:hover {
+    background: #00ffcc;
+    color: black;
+    box-shadow: 0 0 15px #00ffcc;
+}
+</style>
+
+</style>
+</head>
+
+<body>
+
+
+<div class="login-box">
+<button id="home-btn" onclick="window.location.href='index.html'">
+    ANA SAYFAYA DÖN
+</button>
+
+
+<div>
+<div>
+<div>
+
+
+
+
+    <div class="login-title">SKATEX ADMIN PANEL</div>
+
+    <input type="text" id="username" placeholder="Kullanıcı Adı">
+    <input type="password" id="password" placeholder="Şifre">
+
+    <button id="login-btn">GİRİŞ</button>
+
+    <div class="error" id="error-msg">Hatalı giriş!</div>
+</div>
+
+
+<script>
+
+if (!localStorage.getItem("skx_admin_user")) {
+    localStorage.setItem("skx_admin_user", "admin");
+    localStorage.setItem("skx_admin_pass", "admin");
+}
+
+document.getElementById("login-btn").addEventListener("click", () => {
+    const u = document.getElementById("username").value.trim();
+    const p = document.getElementById("password").value.trim();
+
+    const su = localStorage.getItem("skx_admin_user");
+    const sp = localStorage.getItem("skx_admin_pass");
+
+    if (u === su && p === sp) {
+        localStorage.setItem("skx_logged_in", "1");
+        window.location.href = "admin.html";
+    } else {
+        const err = document.getElementById("error-msg");
+        err.style.display = "block";
+        err.classList.add("glitch");
+
+        setTimeout(() => {
+            err.classList.remove("glitch");
+        }, 500);
+    }
+});
+</script>
+
+</body>
+</html>

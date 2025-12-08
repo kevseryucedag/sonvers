@@ -1,0 +1,1408 @@
+[
+  {
+    "id": 1,
+    "title": "Street 7.75 Complete Kaykay",
+    "price": "₺2999",
+    "oldPrice": "₺3299",
+    "category": "deck",
+    "description": "Sokak sürüşüne yeni başlayanlar için harika bir denge sunan bu set, dayanıklı akçaağaç yapısıyla ilk numaralarınızı güvenle öğrenmenizi sağlar. Dar yapısı sayesinde teknik hareketlerde kontrolü elinizde tutarsınız.",
+    "highlights": [
+      "Maple 7 kat deck",
+      "ABEC-7 rulman",
+      "90A bushing"
+    ],
+    "images": [
+      "images/prod1-4.jpg",
+      "images/prod1-2.jpg",
+      "images/prod1-3.jpg",
+      "images/prod1-1.jpg"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "BluePrint 7.75 Sky Brown Bird Blue Skateboard Kaykay",
+    "price": "₺3400",
+    "oldPrice": "₺4799",
+    "category": "deck",
+    "description": "Hafif yapısı ve gökyüzü mavisi tonlarıyla parkta fark edilmek isteyenler için tasarlandı. Çevik manevra kabiliyeti sunan bu model, özellikle rampa ve havuz sürüşlerinde akıcı bir deneyim vaat ediyor.",
+    "highlights": [
+      "Maple 7 kat deck",
+      "ABEC-7 rulman",
+      "90A bushing"
+    ],
+    "images": [
+      "images/prod2-1.jpg",
+      "images/prod2-2.jpg",
+      "images/prod2-3.jpg",
+      "images/prod2-4.jpg"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "BluePrint 8.0 Home Heart Black Green Skateboard Kaykay",
+    "price": "₺2999",
+    "oldPrice": "₺3350",
+    "category": "deck",
+    "description": "Orta genişlikteki bu tahta, hem sokakta hem de parkta çok yönlü bir kullanım arayanlar için ideal. Siyah ve yeşil tonlarının hakim olduğu grafik, sert inişlere dayanıklı sağlam bir gövdeyle birleşiyor.",
+    "highlights": [
+      "Maple 7 kat deck",
+      "ABEC-7 rulman",
+      "90A bushing"
+    ],
+    "images": [
+      "images/prod3-1.jpg",
+      "images/prod3-2.jpg",
+      "images/prod0-0.jpg",
+      "images/prod0-0.jpg"
+    ]
+  },
+  {
+    "id": 4,
+    "title": "BluePrint 8.25 Spray Heart Black Orange Skateboard Kaykay",
+    "price": "₺3700",
+    "oldPrice": "₺4399",
+    "category": "deck",
+    "description": "Geniş yüzeyi sayesinde ayağınızın altına tam oturan bu model, yüksek hızlarda ve büyük rampalarda ekstra stabilite sağlar. Turuncu detaylı sprey sanatı tarzındaki tasarımıyla oldukça agresif bir duruşu vardır.",
+    "highlights": [
+      "Maple 7 kat deck",
+      "ABEC-7 rulman",
+      "90A bushing"
+    ],
+    "images": [
+      "images/prod4-1.jpg",
+      "images/prod4-2.jpg",
+      "images/prod4-3.jpg",
+      "images/prod0-0.jpg"
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Meow 8.0 Big Cat Blue Skateboard Kaykay",
+    "price": "₺2999",
+    "oldPrice": "₺3299",
+    "category": "deck",
+    "description": "Eğlenceli ve ikonik kedi grafiğiyle öne çıkan bu 8.0 inçlik tahta, güçlü bir 'pop' hissi verir. Her seviyeden kaykaycının rahatlıkla kullanabileceği standart ölçülerde, keyifli bir sürüş arkadaşıdır.",
+    "highlights": [
+      "Maple 7 kat deck",
+      "ABEC-7 rulman",
+      "90A bushing"
+    ],
+    "images": [
+      "images/prod5-1.jpg",
+      "images/prod5-2.jpg",
+      "images/prod5-3.jpg",
+      "images/prod0-0.jpg"
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Speed Demons 7.25 Checkers Black White Skateboard Kaykay",
+    "price": "₺3459",
+    "oldPrice": "₺3899",
+    "category": "deck",
+    "description": "Dama desenli klasik tasarımıyla zamansız bir stil sunar. Özellikle daha küçük ayak yapısına sahip olanlar veya teknik sokak hareketlerinde hızlı döndürme avantajı arayanlar için dar bir kesime sahiptir.",
+    "highlights": [
+      "Maple 7 kat deck",
+      "ABEC-7 rulman",
+      "90A bushing"
+    ],
+    "images": [
+      "images/prod6-1.jpg",
+      "images/prod6-2.jpg",
+      "images/prod6-3.jpg",
+      "images/prod0-0.jpg"
+    ]
+  },
+  {
+    "id": 7,
+    "title": "Zoo York 8.0 Mix Tape Multi Skateboard Kaykay",
+    "price": "₺4299",
+    "oldPrice": "₺4689",
+    "category": "deck",
+    "description": "New York sokak kültürünü yansıtan kaset temalı grafiğiyle nostaljik bir hava estirir. 7 katmanlı sağlam yapısı, şehir içindeki zorlu zemin koşullarına ve sert darbelere karşı oldukça dirençlidir.",
+    "highlights": [
+      "Maple 7 kat deck",
+      "ABEC-7 rulman",
+      "90A bushing"
+    ],
+    "images": [
+      "images/prod7-1.jpg",
+      "images/prod7-2.jpg",
+      "images/prod7-3.jpg",
+      "images/prod0-0.jpg"
+    ]
+  },
+  {
+    "id": 8,
+    "title": "Zoo York 8.0 Night Multi Skateboard Kaykay",
+    "price": "₺4999",
+    "oldPrice": "₺4689",
+    "category": "deck",
+    "description": "Şehir ışıklarından ilham alan karanlık ve etkileyici bir tasarıma sahip. Dengeli yapısı sayesinde hem grind hareketlerinde hem de düz sürüşlerde güven verir, profesyonel hissi arayanlar için uygundur.",
+    "highlights": [
+      "Maple 7 kat deck",
+      "ABEC-7 rulman",
+      "90A bushing"
+    ],
+    "images": [
+      "images/prod8-1.jpg",
+      "images/prod8-2.jpg",
+      "images/prod8-3.jpg",
+      "images/prod0-0.jpg"
+    ]
+  },
+  {
+    "id": 9,
+    "title": "Zoo York 8.25 OG 95 Tag White Black Skateboard Kaykay",
+    "price": "₺2899",
+    "oldPrice": "₺3499",
+    "category": "deck",
+    "description": "90'ların orijinal graffiti etiketleme sanatını taşıyan bu geniş tahta, old-school ruhunu yaşatıyor. Geniş tabanı sayesinde havada yakalaması kolaydır ve inişlerde konforlu bir zemin sunar.",
+    "highlights": [
+      "Maple 7 kat deck",
+      "ABEC-7 rulman",
+      "90A bushing"
+    ],
+    "images": [
+      "images/prod9-1.jpg",
+      "images/prod9-2.jpg",
+      "images/prod9-3.jpg",
+      "images/prod0-0.jpg"
+    ]
+  },
+  {
+    "id": 10,
+    "title": "Street 7.75 Complete Kaykay",
+    "price": "₺2999",
+    "oldPrice": "₺3299",
+    "category": "deck",
+    "description": "Her şeyiyle kullanıma hazır bu set, özellikle spora yeni başlayan gençler için mükemmel bir giriş seviyesi ürünüdür. Yüksek manevra kabiliyeti ile öğrenme sürecini hızlandırır ve keyifli hale getirir.",
+    "highlights": [
+      "Maple 7 kat deck",
+      "ABEC-7 rulman",
+      "90A bushing"
+    ],
+    "images": [
+      "images/prod10-1.jpg",
+      "images/prod10-2.jpg",
+      "images/prod10-3.jpg",
+      "images/prod10-4.jpg"
+    ]
+  },
+  {
+    "id": 11,
+    "title": "Meow 7.75 Big Cat Yellow Skateboard Kaykay",
+    "price": "₺2500",
+    "oldPrice": "₺3200",
+    "category": "deck",
+    "description": "Canlı sarı rengi ve enerjik tasarımıyla dikkat çeken bu dar kesim tahta, hafifliği ön planda tutanlar için üretildi. Flip hareketlerini daha az eforla yapmanıza olanak tanır.",
+    "highlights": [
+      "Maple 7 kat deck",
+      "ABEC-7 rulman",
+      "90A bushing"
+    ],
+    "images": [
+      "images/prod11-1.jpg",
+      "images/prod11-2.jpg",
+      "images/prod11-3.jpg",
+      "images/prod11-4.jpg"
+    ]
+  },
+  {
+    "id": 12,
+    "title": "Meow 8.0 Over The Rainbow Blue Skateboard Kaykay",
+    "price": "₺2550",
+    "oldPrice": "₺3124",
+    "category": "deck",
+    "description": "Gökkuşağı detaylarıyla süslenmiş bu model, estetiği performansla birleştiriyor. 8 inçlik ideal genişliği, hem sokak engellerinde hem de park rampalarında dengeli bir sürüş deneyimi sağlar.",
+    "highlights": [
+      "Maple 7 kat deck",
+      "ABEC-7 rulman",
+      "90A bushing"
+    ],
+    "images": [
+      "images/prod12-1.jpg",
+      "images/prod12-2.jpg",
+      "images/prod12-3.jpg",
+      "images/prod12-4.jpg"
+    ]
+  },
+  {
+    "id": 13,
+    "title": "Push 7.75 Morocco MLSL Orange Skateboard Kaykay",
+    "price": "₺2630",
+    "oldPrice": "₺2980",
+    "category": "deck",
+    "description": "Fas'ın sıcak renklerinden ve desenlerinden esinlenen bu tahta, sokak stili için optimize edilmiştir. Dar yapısı sayesinde teknik hareketlere hızlı tepki verir ve taşıması oldukça hafiftir.",
+    "highlights": [
+      "Maple 7 kat deck",
+      "ABEC-7 rulman",
+      "90A bushing"
+    ],
+    "images": [
+      "images/prod13-1.jpg",
+      "images/prod13-2.jpg",
+      "images/prod13-3.jpg",
+      "images/prod13-4.jpg"
+    ]
+  },
+  {
+    "id": 14,
+    "title": "Push 8.5 Tunisia MLSL Blue Skateboard Kaykay",
+    "price": "₺2999",
+    "oldPrice": "₺3299",
+    "category": "deck",
+    "description": "Geniş gövdesiyle ayaklarınızı tamamen kavrayan bu model, özellikle büyük rampalarda ve havuzlarda kayanlar için güvenli bir platform sunar. Tunus temalı grafiğiyle kültürel bir dokunuş katar.",
+    "highlights": [
+      "Maple 7 kat deck",
+      "ABEC-7 rulman",
+      "90A bushing"
+    ],
+    "images": [
+      "images/prod14-1.jpg",
+      "images/prod14-2.jpg",
+      "images/prod14-3.jpg",
+      "images/prod14-4.jpg"
+    ]
+  },
+  {
+    "id": 15,
+    "title": "Push 8.25 Frosty FP Red Blue Skateboard Kaykay",
+    "price": "₺2114",
+    "oldPrice": "₺2684",
+    "category": "deck",
+    "description": "Soğuk tonların kırmızıyla buluştuğu bu tahta, 8.25 inç genişliğiyle konforlu bir sürüş alanı sağlar. Dengeli yapısı sayesinde hem yeni başlayanlar hem de orta seviye kaykaycılar için uygundur.",
+    "highlights": [
+      "Maple 7 kat deck",
+      "ABEC-7 rulman",
+      "90A bushing"
+    ],
+    "images": [
+      "images/prod15-1.jpg",
+      "images/prod15-2.jpg",
+      "images/prod15-3.jpg"
+    ]
+  },
+  {
+    "id": 76,
+    "title": "Rad 8,0 Checkers Dude Crew Black White Skateboard Kaykay",
+    "price": "₺2600",
+    "oldPrice": "₺2780",
+    "category": "deck",
+    "description": "Siyah beyaz dama deseni ve eğlenceli karakter çizimiyle öne çıkan, her ortama uyum sağlayan standart boyutlu bir kaykay. Sağlam bileşenleri sayesinde uzun süreli kullanımlarda bile formunu korur.",
+    "highlights": [
+      "Maple 7 kat deck",
+      "ABEC-7 rulman",
+      "90A bushing"
+    ],
+    "images": [
+      "images/prod76-1.jpg",
+      "images/prod76-2.jpg"
+    ]
+  },
+  {
+    "id": 77,
+    "title": "Speed Demons 6.75 Hot Shot Soft Top (Yumuşak Zımpara) Skateboard Kaykay",
+    "price": "₺3680",
+    "oldPrice": "₺3988",
+    "category": "deck",
+    "description": "Minik kaykaycılar için özel olarak üretilmiş bu model, yumuşak üst yüzeyi sayesinde dizleri ve elleri tahriş etmez. Çok küçük boyutuyla çocukların kontrol etmesi ve taşıması son derece kolaydır.",
+    "highlights": [
+      "Maple 7 kat deck",
+      "ABEC-7 rulman",
+      "90A bushing"
+    ],
+    "images": [
+      "images/prod77-1.jpg",
+      "images/prod77-2.jpg",
+      "images/prod77-3.jpg",
+      "images/prod77-4.jpg"
+    ]
+  },
+  {
+    "id": 78,
+    "title": "Speed Demons 7.0 Paintballer Black Skateboard Kaykay",
+    "price": "₺3740",
+    "oldPrice": "₺4120",
+    "category": "deck",
+    "description": "Gençler ve çocuklar için ideal boyutlarda olan bu tahta, boya sıçraması efektiyle enerjik bir görünüme sahip. Hafif yapısı sayesinde öğrenme aşamasındaki ilk dönüşleri ve zıplamaları kolaylaştırır.",
+    "highlights": [
+      "Maple 7 kat deck",
+      "ABEC-7 rulman",
+      "90A bushing"
+    ],
+    "images": [
+      "images/prod78-1.jpg",
+      "images/prod78-2.jpg",
+      "images/prod78-3.jpg",
+      "images/prod78-3.jpg"
+    ]
+  },
+  {
+    "id": 16,
+    "title": "Slappy 8.5 ST1 Classic Hollow Low Black Truck",
+    "price": "₺2899",
+    "oldPrice": "₺3199",
+    "category": "truck",
+    "description": "İçi boşaltılmış aks ve kingpin yapısı sayesinde ağırlığı minimuma indiren bu siyah dingil, geniş tahtalar için mükemmel bir uyum sağlar. Alçak profili ile yere daha yakın ve stabil bir sürüş sunar.",
+    "highlights": [
+      "Maple 7 kat deck",
+      "ABEC-7 rulman",
+      "90A bushing"
+    ],
+    "images": [
+      "images/prod16-1.jpg",
+      "images/prod16-2.jpg",
+      "images/prod16-3.jpg",
+      "images/prod16-4.jpg"
+    ]
+  },
+  {
+    "id": 17,
+    "title": "Slappy 8.5 ST1 x Toy Classic Hollow Orange Black Truck",
+    "price": "₺2650",
+    "oldPrice": "₺3289",
+    "category": "truck",
+    "description": "Özel bir iş birliği serisi olan bu model, turuncu detaylarıyla dikkat çekerken hafifletilmiş gövdesiyle performanstan ödün vermez. Geniş deck kullananlar için dayanıklılık ve estetiği bir arada sunar.",
+    "highlights": [
+      "Maple 7 kat deck",
+      "ABEC-7 rulman",
+      "90A bushing"
+    ],
+    "images": [
+      "images/prod17-1.jpg",
+      "images/prod17-2.jpg",
+      "images/prod17-3.jpg",
+      "images/prod17-4.jpg"
+    ]
+  },
+  {
+    "id": 18,
+    "title": "Slappy 8.25 Inverted St1 Polished Truck",
+    "price": "₺2877",
+    "oldPrice": "₺3050",
+    "category": "truck",
+    "description": "Ters çevrilmiş kingpin tasarımı sayesinde grind yaparken takılmaları önleyen, pürüzsüz yüzeyli metalik dingil. 8.25 inçlik tahtalarla tam uyum sağlayarak hassas dönüş kabiliyeti kazandırır.",
+    "highlights": [
+      "Maple 7 kat deck",
+      "ABEC-7 rulman",
+      "90A bushing"
+    ],
+    "images": [
+      "images/prod18-1.jpg",
+      "images/prod18-2.jpg",
+      "images/prod18-3.jpg",
+      "images/prod18-4.jpg"
+    ]
+  },
+  {
+    "id": 19,
+    "title": "Slappy 8.25 ST1 Classic Lights Hollow Blue Truck",
+    "price": "₺2999",
+    "oldPrice": "₺3289",
+    "category": "truck",
+    "description": "Mavi tabanıyla şık bir görüntü sunan bu hafifletilmiş dingil, havada yapılan hareketlerde tahtanın ağırlığını hissettirmez. Dayanıklı alaşımı uzun ömürlü bir grind performansı vaat eder.",
+    "highlights": [
+      "Maple 7 kat deck",
+      "ABEC-7 rulman",
+      "90A bushing"
+    ],
+    "images": [
+      "images/prod19-1.jpg",
+      "images/prod19-2.jpg",
+      "images/prod19-3.jpg"
+    ]
+  },
+  {
+    "id": 20,
+    "title": "Slappy 9.0 ST1 Lights Gold Truck",
+    "price": "₺2668",
+    "oldPrice": "₺3177",
+    "category": "truck",
+    "description": "Ekstra geniş tahtalar ve cruiser modeller için üretilmiş, altın rengiyle parlayan sağlam bir dingil. Geniş aks aralığı sayesinde yüksek hızlarda bile sarsıntısız ve güvenli bir yol tutuşu sağlar.",
+    "highlights": [
+      "Maple 7 kat deck",
+      "ABEC-7 rulman",
+      "90A bushing"
+    ],
+    "images": [
+      "images/prod20-1.jpg",
+      "images/prod20-2.jpg",
+      "images/prod20-3.jpg",
+      "images/prod20-4.jpg"
+    ]
+  },
+  {
+    "id": 21,
+    "title": "Tensor 5,5 Alum Camo Red Raw Truck",
+    "price": "₺3489",
+    "oldPrice": "₺3799",
+    "category": "truck",
+    "description": "Kırmızı kamuflaj deseniyle agresif bir tarza sahip olan bu alüminyum dingil, hafifliği ve çevikliğiyle bilinir. Sokak kaykaycılarının ani manevra ihtiyaçlarına hızlı tepki veren geometrisiyle öne çıkar.",
+    "highlights": [
+      "Maple 7 kat deck",
+      "ABEC-7 rulman",
+      "90A bushing"
+    ],
+    "images": [
+      "images/prod21-1.jpg",
+      "images/prod21-2.jpg",
+      "images/prod21-3.jpg",
+      "images/prod21-4.jpg"
+    ]
+  },
+  {
+    "id": 22,
+    "title": "Slappy 8.5 ST1 Lights Gold Truck",
+    "price": "₺1237",
+    "oldPrice": "₺1350",
+    "category": "truck",
+    "description": "Hafifletilmiş yapıyı lüks bir altın kaplamayla buluşturan bu model, 8.5 inçlik tahtalar için idealdir. Hem parkta hem de sokakta estetik ve performansı bir arada arayanlar için tasarlandı.",
+    "highlights": [
+      "Maple 7 kat deck",
+      "ABEC-7 rulman",
+      "90A bushing"
+    ],
+    "images": [
+      "images/prod22-1.jpg",
+      "images/prod22-2.jpg",
+      "images/prod22-3.jpg",
+      "images/prod22-4.jpg"
+    ]
+  },
+  {
+    "id": 23,
+    "title": "Slappy 8.5 Inverted ST1 Curb Killer Matte Black Truck",
+    "price": "₺1459",
+    "oldPrice": "₺1789",
+    "category": "truck",
+    "description": "Mat siyah kaplaması ve ters kingpin yapısıyla özellikle kaldırım kenarlarında grind yapmak için geliştirilmiştir. Somun takılma derdini ortadan kaldırarak pürüzsüz bir kayma deneyimi sunar.",
+    "highlights": [
+      "Maple 7 kat deck",
+      "ABEC-7 rulman",
+      "90A bushing"
+    ],
+    "images": [
+      "images/prod23-1.jpg",
+      "images/prod23-2.jpg",
+      "images/prod23-3.jpg",
+      "images/prod23-4.jpg"
+    ]
+  },
+  {
+    "id": 24,
+    "title": "Slappy 8.25 ST1 Classic Hollow Reacher Graphic White Truck",
+    "price": "₺1862",
+    "oldPrice": "₺2160",
+    "category": "truck",
+    "description": "Beyaz gövdesi üzerine işlenmiş özel grafiğiyle sade ama etkileyici. İçi boşaltılmış aks mili sayesinde ağırlıktan tasarruf ederken dayanıklılıktan ödün vermez, 8.25 inç tahtalarla tam uyumludur.",
+    "highlights": [
+      "Maple 7 kat deck",
+      "ABEC-7 rulman",
+      "90A bushing"
+    ],
+    "images": [
+      "images/prod24-1.jpg",
+      "images/prod24-2.jpg",
+      "images/prod24-3.jpg"
+    ]
+  },
+  {
+    "id": 25,
+    "title": "Tensor 5,5 Alum Camo Black Raw Truck",
+    "price": "₺1599",
+    "oldPrice": "₺1849",
+    "category": "truck",
+    "description": "Siyah kamuflaj deseniyle gizlilik ve stili birleştiren bu model, alüminyum alaşımı sayesinde oldukça hafiftir. Standart boyuttaki tahtalar için keskin dönüşler ve dengeli inişler sağlar.",
+    "highlights": [
+      "Maple 7 kat deck",
+      "ABEC-7 rulman",
+      "90A bushing"
+    ],
+    "images": [
+      "images/prod25-1.jpg",
+      "images/prod25-2.jpg",
+      "images/prod25-3.jpg",
+      "images/prod25-4.jpg"
+    ]
+  },
+  {
+    "id": 26,
+    "title": "Darkstar 52 mm Blacklight Yellow Wheel",
+    "price": "₺2999",
+    "oldPrice": "₺3299",
+    "category": "wheel",
+    "description": "Özel ışık altında parlayan neon sarı rengiyle gece sürüşlerini görsel bir şölene dönüştürür. 52 mm boyutu, teknik sokak hareketleri için ideal bir hız ve kontrol dengesi sunar.",
+    "highlights": [
+      "Maple 7 kat deck",
+      "ABEC-7 rulman",
+      "90A bushing"
+    ],
+    "images": [
+      "images/prod26-1.jpg",
+      "images/prod26-2.jpg",
+      "images/prod26-3.jpg"
+    ]
+  },
+  {
+    "id": 27,
+    "title": "Spitfire F4 99 Grimple Furry Classic 54 mm Tekerlek Seti",
+    "price": "₺2400",
+    "oldPrice": "₺2880",
+    "category": "wheel",
+    "description": "Yüksek performanslı üretan formülü sayesinde düzleşmeye (flatspot) karşı dirençlidir. 54 mm boyutuyla hem parkta hızlanmak hem de sokakta pürüzleri aşmak için mükemmel bir orta yoldur.",
+    "highlights": [
+      "Maple 7 kat deck",
+      "ABEC-7 rulman",
+      "90A bushing"
+    ],
+    "images": [
+      "images/prod27-1.jpg",
+      "images/prod27-2.jpg",
+      "images/prod27-3.jpg"
+    ]
+  },
+  {
+    "id": 28,
+    "title": "Spitfire F4 99 Wilson Burn Squad Conical 56 mm Tekerlek Seti",
+    "price": "₺2999",
+    "oldPrice": "₺3299",
+    "category": "wheel",
+    "description": "Geniş tabanlı konik yapısı, virajlarda ve rampalarda ekstra yol tutuşu sağlar. 56 mm büyük çapı sayesinde yüksek hızlara çıkabilir ve bozuk zeminlerde daha akıcı bir sürüş elde edersiniz.",
+    "highlights": [
+      "Maple 7 kat deck",
+      "ABEC-7 rulman",
+      "90A bushing"
+    ],
+    "images": [
+      "images/prod28-1.jpg",
+      "images/prod28-2.jpg",
+      "images/prod28-3.jpg"
+    ]
+  },
+  {
+    "id": 29,
+    "title": "Spitfire F4 99D Burn Squad Conical 54 mm Tekerlek Seti",
+    "price": "₺2999",
+    "oldPrice": "₺3299",
+    "category": "wheel",
+    "description": "Hem kayma (slide) kolaylığı hem de tutuş gücü arasında mükemmel bir denge kuran sertlik derecesine sahiptir. Konik şekli, ağırlığı azaltırken kenar kilitlenmelerinde avantaj sağlar.",
+    "highlights": [
+      "Maple 7 kat deck",
+      "ABEC-7 rulman",
+      "90A bushing"
+    ],
+    "images": [
+      "images/prod29-1.jpg",
+      "images/prod29-2.jpg",
+      "images/prod29-3.jpg"
+    ]
+  },
+  {
+    "id": 30,
+    "title": "Bones Big Balls Reds Bearings",
+    "price": "₺2219",
+    "oldPrice": "₺2427",
+    "category": "bearings",
+    "description": "Standart rulmanlara göre daha büyük bilyeler içeren bu model, daha yüksek hızlara daha az eforla çıkmanızı sağlar. Kir tutmayan yapısı sayesinde uzun ömürlü ve sessiz bir sürüş sunar.",
+    "highlights": [
+      "Maple 7 kat deck",
+      "ABEC-7 rulman",
+      "90A bushing"
+    ],
+    "images": [
+      "images/prod30-1.jpg",
+      "images/prod30-2.jpg"
+    ]
+  },
+  {
+    "id": 31,
+    "title": "Bones Reds Bearings",
+    "price": "₺2199",
+    "oldPrice": "₺2324",
+    "category": "bearings",
+    "description": "Kaykay dünyasının en güvenilir ve popüler rulman tercihlerinden biridir. Dayanıklılığı ve hızı uygun fiyatla buluşturan bu set, önceden yağlanmış olarak gelir ve hemen kullanıma hazırdır.",
+    "highlights": [
+      "Maple 7 kat deck",
+      "ABEC-7 rulman",
+      "90A bushing"
+    ],
+    "images": [
+      "images/prod31-1.jpg",
+      "images/prod31-2.jpg"
+    ]
+  },
+  {
+    "id": 32,
+    "title": "Mini Logo Bearings",
+    "price": "₺2030",
+    "oldPrice": "₺2349",
+    "category": "bearings",
+    "description": "Sade tasarımı ve yüksek performansıyla bilinen bu rulmanlar, bütçe dostu olmasına rağmen profesyonel seviyede akıcılık sağlar. İki tarafındaki kalkanlar sayesinde tozdan etkilenmez.",
+    "highlights": [
+      "Maple 7 kat deck",
+      "ABEC-7 rulman",
+      "90A bushing"
+    ],
+    "images": [
+      "images/prod32-1.jpg"
+    ]
+  },
+  {
+    "id": 66,
+    "title": "Bones Bearings Ceramic Super Reds Bearings (white)",
+    "price": "₺2100",
+    "oldPrice": "₺2540",
+    "category": "bearings",
+    "description": "Seramik bilyeleri sayesinde ısıya ve sürtünmeye karşı inanılmaz dirençlidir. Çelik bilyeli modellere göre çok daha hafiftir ve paslanma derdi olmadan yıllarca üstün hız performansı sunar.",
+    "highlights": [
+      "Maple 7 kat deck",
+      "ABEC-7 rulman",
+      "90A bushing"
+    ],
+    "images": [
+      "images/prod66-1.jpg",
+      "images/prod66-2.jpg",
+      "images/prod66-3.jpg"
+    ]
+  },
+  {
+    "id": 67,
+    "title": "Bones Bearings Reds Bearings (red)",
+    "price": "₺2178",
+    "oldPrice": "₺2780",
+    "category": "bearings",
+    "description": "Kolay temizlenebilir kapakları ve sağlam çelik kafesiyle her türlü darbe ve basınca karşı koyar. Kaykaycılar arasında bir klasik olan bu model, pürüzsüz dönüş garantisi verir.",
+    "highlights": [
+      "Maple 7 kat deck",
+      "ABEC-7 rulman",
+      "90A bushing"
+    ],
+    "images": [
+      "images/prod67-1.jpg",
+      "images/prod67-2.jpg"
+    ]
+  },
+  {
+    "id": 68,
+    "title": "Bronson Speed Co. Winkowski Mushroom Pro Bearings (multi)",
+    "price": "₺2640",
+    "oldPrice": "₺2980",
+    "category": "bearings",
+    "description": "Profesyonel imza serisi olan bu rulmanlar, özel mantar desenli tasarımıyla tarzınızı yansıtır. Derin kanallı yatak yapısı sayesinde yanal darbelere karşı ekstra koruma sağlar.",
+    "highlights": [
+      "Maple 7 kat deck",
+      "ABEC-7 rulman",
+      "90A bushing"
+    ],
+    "images": [
+      "images/prod68-1.jpg",
+      "images/prod68-2.jpg",
+      "images/prod68-3.jpg",
+      "images/prod68-4.jpg"
+    ]
+  },
+  {
+    "id": 69,
+    "title": "skatedeluxe Blacks Performance Bearings (black)",
+    "price": "₺2000",
+    "oldPrice": "₺2209",
+    "category": "bearings",
+    "description": "Tamamen siyah şık görünümüyle dikkat çeken bu performans rulmanları, sessiz ve hızlı bir sürüş için hassas bir şekilde üretilmiştir. Günlük kullanım için ideal bir fiyat-performans ürünüdür.",
+    "highlights": [
+      "Maple 7 kat deck",
+      "ABEC-7 rulman",
+      "90A bushing"
+    ],
+    "images": [
+      "images/prod69-1.jpg",
+      "images/prod69-2.jpg",
+      "images/prod6931.jpg",
+      "images/prod69-4.jpg"
+    ]
+  },
+  {
+    "id": 70,
+    "title": "skatedeluxe Rainbows Bearings (multi)",
+    "price": "₺1980",
+    "oldPrice": "₺2259",
+    "category": "bearings",
+    "description": "Tekerleklerinizin içinde dönen bir renk cümbüşü yaratır. Gökkuşağı renklerindeki kapakları sadece estetik değil, aynı zamanda toza karşı güçlü bir bariyer görevi görür.",
+    "highlights": [
+      "Maple 7 kat deck",
+      "ABEC-7 rulman",
+      "90A bushing"
+    ],
+    "images": [
+      "images/prod70-1.jpg",
+      "images/prod70-2.jpg",
+      "images/prod70-3.jpg",
+      "images/prod70-4.jpg"
+    ]
+  },
+  {
+    "id": 71,
+    "title": "SKF Alexis Pro Bearings (multi)",
+    "price": "₺2420",
+    "oldPrice": "₺2500",
+    "category": "bearings",
+    "description": "Endüstriyel kalitedeki hassasiyeti kaykay dünyasına taşıyan bu pro model, en zorlu zeminlerde bile hızını korur. Alexis Sablone'un teknik sürüş tarzına uygun olarak dayanıklılık odaklı üretilmiştir.",
+    "highlights": [
+      "Maple 7 kat deck",
+      "ABEC-7 rulman",
+      "90A bushing"
+    ],
+    "images": [
+      "images/prod71-1.jpg",
+      "images/prod71-2.jpg",
+      "images/prod71-3.jpg",
+      "images/prod71-4.jpg"
+    ]
+  },
+  {
+    "id": 72,
+    "title": "SKF Ishod Pro Bearings (multi)",
+    "price": "₺2420",
+    "oldPrice": "₺2500",
+    "category": "bearings",
+    "description": "Yüksek hızlara çıkmayı sevenler için Ishod Wair imzalı bu rulmanlar, pürüzsüz dönüşüyle adeta buz üzerinde kayıyormuş hissi verir. Darbe emici yapısı sayesinde merdiven setlerinden atlamalarda güvenilirdir.",
+    "highlights": [
+      "Maple 7 kat deck",
+      "ABEC-7 rulman",
+      "90A bushing"
+    ],
+    "images": [
+      "images/prod72-1.jpg",
+      "images/prod72-2.jpg",
+      "images/prod72-3.jpg",
+      "images/prod72-4.jpg"
+    ]
+  },
+  {
+    "id": 73,
+    "title": "SKF Kader Pro Bearings (multi)s",
+    "price": "₺2420",
+    "oldPrice": "₺2500",
+    "category": "bearings",
+    "description": "Kader Sylla'nın agresif ve hızlı tarzı için tasarlanan bu rulmanlar, sürtünmeyi en aza indirerek maksimum hızlanma sağlar. Kaliteli çelik bileşenleri uzun süreli kullanımda bile performansını korur.",
+    "highlights": [
+      "Maple 7 kat deck",
+      "ABEC-7 rulman",
+      "90A bushing"
+    ],
+    "images": [
+      "images/prod73-1.jpg",
+      "images/prod73-2.jpg",
+      "images/prod73-3.jpg",
+      "images/prod73-4.jpg"
+    ]
+  },
+  {
+    "id": 74,
+    "title": "SKF Oski Pro Bearings (multi)",
+    "price": "₺2420",
+    "oldPrice": "₺2500",
+    "category": "bearings",
+    "description": "Havuz ve rampa sürüşlerinde ihtiyaç duyulan kesintisiz hızı sağlamak için Oski tarafından onaylanmıştır. İsveç mühendisliğiyle üretilen bu rulmanlar, en ufak bir takılma olmadan akıcı bir deneyim sunar.",
+    "highlights": [
+      "Maple 7 kat deck",
+      "ABEC-7 rulman",
+      "90A bushing"
+    ],
+    "images": [
+      "images/prod74-1.jpg",
+      "images/prod74-2.jpg",
+      "images/prod74-3.jpg",
+      "images/prod74-4.jpg"
+    ]
+  },
+  {
+    "id": 75,
+    "title": "SKF Standard Bearings (multi)",
+    "price": "₺2420",
+    "oldPrice": "₺2500",
+    "category": "bearings",
+    "description": "SKF'nin efsanevi kalitesini standart bir pakette sunan bu set, her türlü kaykay disiplini için uygundur. Sessiz, hızlı ve dayanıklı yapısıyla bakım gerektirmeden uzun süre kullanılabilir.",
+    "highlights": [
+      "Maple 7 kat deck",
+      "ABEC-7 rulman",
+      "90A bushing"
+    ],
+    "images": [
+      "images/prod75-1.jpg",
+      "images/prod75-2.jpg",
+      "images/prod75-3.jpg",
+      "images/prod75-4.jpg"
+    ]
+  },
+  {
+    "id": 33,
+    "title": "Killer Speed Co 51 mm 99 A Classic Cut Bachinsky Saw Tekerlek",
+    "price": "₺2469",
+    "oldPrice": "₺2879",
+    "category": "wheel",
+    "description": "Testere dişi desenli grafiğiyle öne çıkan bu 51 mm tekerlek, teknik sokak kaykaycıları için üretilmiştir. Küçük çapı sayesinde tahtayı yerden daha kolay kaldırmanıza ve hızlı flip yapmanıza yardımcı olur.",
+    "highlights": [
+      "Maple 7 kat deck",
+      "ABEC-7 rulman",
+      "90A bushing"
+    ],
+    "images": [
+      "images/prod33-1.jpg",
+      "images/prod33-2.jpg"
+    ]
+  },
+  {
+    "id": 34,
+    "title": "OJ Super Juice Mini Wheels (black) 55 mm 78A 4 Pack",
+    "price": "₺2999",
+    "oldPrice": "₺3299",
+    "category": "wheel",
+    "description": "Siyah renkli ve yumuşak dokulu bu tekerlekler, bozuk asfaltlarda bile sarsıntısız bir sürüş sağlar. Cruiser tarzı veya film çekimi yapan kaykaycılar için sessiz ve konforlu bir seçenektir.",
+    "highlights": [
+      "Maple 7 kat deck",
+      "ABEC-7 rulman",
+      "90A bushing"
+    ],
+    "images": [
+      "images/prod34-1.jpg",
+      "images/prod34-2.jpg",
+      "images/prod34-3.jpg"
+    ]
+  },
+  {
+    "id": 35,
+    "title": "Opera SOS 54 mm Fire Mask Hardline Conical Candle White 99a Wheels Tekerlek",
+    "price": "₺2249",
+    "oldPrice": "₺2869",
+    "category": "wheel",
+    "description": "Alev maskesi grafiği ve konik kesimiyle modern bir stil sunar. 54 mm boyutuyla hem hızlanma hem de denge gerektiren parkurlar için idealdir; sert yapısı slide hareketlerini kolaylaştırır.",
+    "highlights": [
+      "Maple 7 kat deck",
+      "ABEC-7 rulman",
+      "90A bushing"
+    ],
+    "images": [
+      "images/prod35-1.jpg",
+      "images/prod35-2.jpg"
+    ]
+  },
+  {
+    "id": 36,
+    "title": "Santa Cruz Roskopp Face Two Reissue OG Slime Balls Wheels (slime green) 60 mm 78A 4 Pack",
+    "price": "₺1678",
+    "oldPrice": "₺2425",
+    "category": "wheel",
+    "description": "80'lerin efsanevi tasarımını günümüze taşıyan, neon yeşili büyük ve yumuşak tekerlekler. Eski usul geniş tahtalarla veya cruiser kurulumlarıyla şehirde gezmek için mükemmel bir retro dokunuş.",
+    "highlights": [
+      "Maple 7 kat deck",
+      "ABEC-7 rulman",
+      "90A bushing"
+    ],
+    "images": [
+      "images/prod36-1.jpg",
+      "images/prod36-2.jpg",
+      "images/prod36-3.jpg"
+    ]
+  },
+  {
+    "id": 37,
+    "title": "skatedeluxe Barbwire Conical ADV Wheels (natural) 56mm 100A 4 Pack",
+    "price": "₺1769",
+    "oldPrice": "₺2156",
+    "category": "wheel",
+    "description": "Dikenli tel deseniyle asi bir görünüme sahip olan bu sert tekerlekler, pürüzsüz beton park zeminlerinde maksimum hız sağlar. Konik yapısı sayesinde ağırlığı azaltılmış ve tepki süresi iyileştirilmiştir.",
+    "highlights": [
+      "Maple 7 kat deck",
+      "ABEC-7 rulman",
+      "90A bushing"
+    ],
+    "images": [
+      "images/prod37-1.jpg",
+      "images/prod37-2.jpg",
+      "images/prod37-3.jpg"
+    ]
+  },
+  {
+    "id": 38,
+    "title": "Spitfire Bighead Wheels (white red) 52 mm 99A 4 Pack",
+    "price": "₺1374",
+    "oldPrice": "₺1849",
+    "category": "wheel",
+    "description": "Kaykay dünyasının en tanınan logosunu taşıyan klasik model. 52 mm standart boyutuyla her türlü zemine uyum sağlar, dayanıklı yapısı sayesinde uzun süre performans kaybı yaşatmaz.",
+    "highlights": [
+      "Maple 7 kat deck",
+      "ABEC-7 rulman",
+      "90A bushing"
+    ],
+    "images": [
+      "images/prod38-1.jpg",
+      "images/prod38-2.jpg",
+      "images/prod38-3.jpg"
+    ]
+  },
+  {
+    "id": 39,
+    "title": "Verb 52 mm Marble Dip Mint Kaykay Tekerlek Seti",
+    "price": "₺2342",
+    "oldPrice": "2598",
+    "category": "wheel",
+    "description": "Nane yeşili mermer deseniyle estetik bir duruş sergiler. Küçük çapı sayesinde teknik hareketlerde tahtayı döndürmek çok daha kolaydır, sokak stili için harika bir tercihtir.",
+    "highlights": [
+      "Maple 7 kat deck",
+      "ABEC-7 rulman",
+      "90A bushing"
+    ],
+    "images": [
+      "images/prod39-1.jpg",
+      "images/prod39-2.jpg"
+    ]
+  },
+  {
+    "id": 40,
+    "title": "Verb 52 mm Marble Dip Pink Kaykay Tekerleği Seti",
+    "price": "₺2699",
+    "oldPrice": "₺3048",
+    "category": "wheel",
+    "description": "Pembe mermer dokusuyla kaykayınıza renk katar. Sert yapısı sayesinde betonda hızlı kayar ve grind hareketlerinde takılma yapmaz, stil sahibi kaykaycılar için uygundur.",
+    "highlights": [
+      "Maple 7 kat deck",
+      "ABEC-7 rulman",
+      "90A bushing"
+    ],
+    "images": [
+      "images/prod40-1.jpg",
+      "images/prod40-2.jpg"
+    ]
+  },
+  {
+    "id": 41,
+    "title": "34mm Blackriver Trucks 3.0",
+    "price": "₺1642",
+    "oldPrice": "₺2154",
+    "category": "fingerboard",
+    "description": "Parmak kaykayı profesyonelleri için üretilmiş, gerçekçi dönüş mekanizmasına sahip üst düzey bir dingil seti. 34mm genişliği, geniş decklerle mükemmel uyum sağlayarak masaüstü parkınızda üstün kontrol sunar.",
+    "highlights": [
+      "Maple 7 kat deck",
+      "ABEC-7 rulman",
+      "90A bushing"
+    ],
+    "images": [
+      "images/prod41-1.jpg",
+      "images/prod41-2.jpg",
+      "images/prod41-3.jpg",
+      "images/prod41-4.jpg"
+    ]
+  },
+  {
+    "id": 42,
+    "title": "Fingerboard Starter Pack SOUTH SOFT BUSHINGS",
+    "price": "₺2244",
+    "oldPrice": "₺2888",
+    "category": "fingerboard",
+    "description": "Yumuşak burçlarla güçlendirilmiş bu başlangıç seti, parmak kaykayına yeni başlayanlar için pürüzsüz dönüşler sağlar. Kurulumu kolay ve parçaları birbiriyle tam uyumlu, eksiksiz bir pakettir.",
+    "highlights": [
+      "Maple 7 kat deck",
+      "ABEC-7 rulman",
+      "90A bushing"
+    ],
+    "images": [
+      "images/prod42-1.jpg",
+      "images/prod42-2.jpg",
+      "images/prod42-3.jpg",
+      "images/prod42-4.jpg"
+    ]
+  },
+  {
+    "id": 43,
+    "title": "Fingerboard Starter Packet FBS Box 2.0",
+    "price": "₺2409",
+    "oldPrice": "₺2600",
+    "category": "fingerboard",
+    "description": "Kendi parmak kaykayınızı kurmanız için gereken her şeyi içeren bu kutu, kaliteli bileşenleriyle dikkat çeker. Hem hobiye yeni başlayanlar hem de yedek parça arayanlar için pratik bir çözümdür.",
+    "highlights": [
+      "Maple 7 kat deck",
+      "ABEC-7 rulman",
+      "90A bushing"
+    ],
+    "images": [
+      "images/prod43-1.jpg",
+      "images/prod43-2.jpg",
+      "images/prod43-3.jpg",
+      "images/prod43-4.jpg"
+    ]
+  },
+  {
+    "id": 44,
+    "title": "Fingerboard Starter Packet Mini 70D",
+    "price": "₺2000",
+    "oldPrice": "₺2345",
+    "category": "fingerboard",
+    "description": "Daha sert tekerleklerle donatılmış bu set, masa veya sert yüzeylerde kayarken daha net bir his verir. Kompakt yapısı sayesinde her yerde yanınızda taşıyıp antrenman yapabilirsiniz.",
+    "highlights": [
+      "Maple 7 kat deck",
+      "ABEC-7 rulman",
+      "90A bushing"
+    ],
+    "images": [
+      "images/prod44-1.jpg",
+      "images/prod44-2.jpg",
+      "images/prod44-3.jpg",
+      "images/prod44-4.jpg"
+    ]
+  },
+  {
+    "id": 45,
+    "title": "Keep A Breast Foundation x Slushcult Grom Fingerboard Complete - Black",
+    "price": "₺2100",
+    "oldPrice": "₺2648",
+    "category": "fingerboard",
+    "description": "Anlamlı bir iş birliğinin ürünü olan bu siyah parmak kaykayı, şık tasarımının yanı sıra sosyal farkındalığa da katkıda bulunur. Yüksek kaliteli rulmanlı tekerlekleri ile profesyonel bir sürüş deneyimi sunar.",
+    "highlights": [
+      "Maple 7 kat deck",
+      "ABEC-7 rulman",
+      "90A bushing"
+    ],
+    "images": [
+      "images/prod45-1.jpg",
+      "images/pro45-2.jpg",
+      "images/prod45-3.jpg"
+    ]
+  },
+  {
+    "id": 46,
+    "title": "December Real Wear By Myself",
+    "price": "₺3000",
+    "oldPrice": "₺3499",
+    "category": "fingerboard",
+    "description": "Kullandıkça grafiği gerçek bir kaykay gibi aşınan özel baskı teknolojisine sahiptir. Bu sayede zamanla size özel, yaşanmışlık dolu bir görünüme kavuşur.",
+    "highlights": [
+      "Maple 7 kat deck",
+      "ABEC-7 rulman",
+      "90A bushing"
+    ],
+    "images": [
+      "images/prod46-1.jpg",
+      "images/prod46-2.jpg",
+      "images/prod46-3.jpg",
+      "images/prod0-0.jpg"
+    ]
+  },
+  {
+    "id": 47,
+    "title": "Devise Fingerboards Photo Series 2",
+    "price": "₺2150",
+    "oldPrice": "₺2469",
+    "category": "fingerboard",
+    "description": "Gerçekçi fotoğraf baskısıyla süslenmiş bu tahta, detaylara önem veren koleksiyonerler için harika bir parça. Ahşap katmanları ve cilası, eldeki hissiyatı üst seviyeye taşır.",
+    "highlights": [
+      "Maple 7 kat deck",
+      "ABEC-7 rulman",
+      "90A bushing"
+    ],
+    "images": [
+      "images/prod47-1.jpg",
+      "images/prod47-2.jpg",
+      "images/prod47-3.jpg",
+      "images/prod47-4.jpg"
+    ]
+  },
+  {
+    "id": 48,
+    "title": "Stinke Fingaz 'Seeing Double' Heroin Skateboards",
+    "price": "₺2699",
+    "oldPrice": "₺2799",
+    "category": "fingerboard",
+    "description": "Sıra dışı ve sanatsal grafiğiyle parmak kaykayı dünyasında fark yaratır. Geniş yapısı sayesinde parmaklarınızla tahtayı kontrol etmek ve zorlu numaraları denemek çok daha rahattır.",
+    "highlights": [
+      "Maple 7 kat deck",
+      "ABEC-7 rulman",
+      "90A bushing"
+    ],
+    "images": [
+      "images/prod48-1.jpg",
+      "images/prod48-2.jpg",
+      "images/prod48-3.jpg",
+      "images/prod0-0.jpg"
+    ]
+  },
+  {
+    "id": 62,
+    "title": "Oak Wheels RV2V Inverted Oak Wuitton Turquesa",
+    "price": "₺1000",
+    "oldPrice": "₺1452",
+    "category": "fingerboard",
+    "description": "Turkuaz rengi ve lüks desen detaylarıyla parmak kaykayınıza sınıf atlatacak özel bir tekerlek seti. Üretan malzemesi, gerçek kaykay tekerleği hissi vererek zemine mükemmel tutunur.",
+    "highlights": [
+      "Maple 7 kat deck",
+      "ABEC-7 rulman",
+      "90A bushing"
+    ],
+    "images": [
+      "images/prod62-1.jpg"
+    ]
+  },
+  {
+    "id": 63,
+    "title": "Slushcult Grom Series Fingerboard Complete - Chrome Full Circle",
+    "price": "₺2000",
+    "oldPrice": "₺2472",
+    "category": "fingerboard",
+    "description": "Krom detaylarıyla parlayan bu tam set, hem görsel olarak etkileyici hem de performans odaklıdır. Rulmanlı tekerlekleri en ufak dokunuşta bile akıcı bir şekilde döner.",
+    "highlights": [
+      "Maple 7 kat deck",
+      "ABEC-7 rulman",
+      "90A bushing"
+    ],
+    "images": [
+      "images/prod63-1.jpg",
+      "images/prod63-2.jpg"
+    ]
+  },
+  {
+    "id": 64,
+    "title": "Slushcult Grom Series Fingerboard Complete - Shit Happens",
+    "price": "₺2000",
+    "oldPrice": "₺2472",
+    "category": "fingerboard",
+    "description": "Esprili grafiğiyle kaykay kültürünün eğlenceli yanını yansıtan, kullanıma hazır profesyonel bir parmak kaykayı. Ahşap deck yapısı, plastik oyuncaklara göre çok daha iyi bir pop hissi sağlar.",
+    "highlights": [
+      "Maple 7 kat deck",
+      "ABEC-7 rulman",
+      "90A bushing"
+    ],
+    "images": [
+      "images/prod64-1.jpg",
+      "images/prod64-2.jpg"
+    ]
+  },
+  {
+    "id": 65,
+    "title": "Slushcult x 411VM Grom Fingerboard Complete",
+    "price": "₺2400",
+    "oldPrice": "₺2789",
+    "category": "fingerboard",
+    "description": "Efsanevi kaykay video dergisi 411VM temalı bu özel seri, nostalji severler için üretildi. Koleksiyonluk değeri olan bu parça, aynı zamanda yüksek performanslı bileşenlerle donatılmıştır.",
+    "highlights": [
+      "Maple 7 kat deck",
+      "ABEC-7 rulman",
+      "90A bushing"
+    ],
+    "images": [
+      "images/prod65-1.jpg",
+      "images/prod65-2.jpg",
+      "images/prod65-3.jpg",
+      "images/prod65-4.jpg"
+    ]
+  },
+  {
+    "id": 49,
+    "title": "Deathwish Deathstack Wax",
+    "price": "₺500",
+    "oldPrice": "₺580",
+    "category": "wax",
+    "description": "Kaldırımları ve pürüzlü betonları adeta buz pistine çeviren yüksek performanslı bir kaykay mumu. İstiflenmiş tasarımı sayesinde tutuşu kolaydır ve çantada az yer kaplar.",
+    "highlights": [
+      "Maple 7 kat deck",
+      "ABEC-7 rulman",
+      "90A bushing"
+    ],
+    "images": [
+      "images/prod49-1.jpg"
+    ]
+  },
+  {
+    "id": 50,
+    "title": "Spitfire Embers Mini Bighead Wax",
+    "price": "₺620",
+    "oldPrice": "₺735",
+    "category": "wax",
+    "description": "Cebinize sığacak kadar kompakt ama en inatçı yüzeyleri bile kayganlaştıracak kadar etkili. İkonik alevli kafa şekliyle kaykay seanslarınızın vazgeçilmez aksesuarı olacak.",
+    "highlights": [
+      "Maple 7 kat deck",
+      "ABEC-7 rulman",
+      "90A bushing"
+    ],
+    "images": [
+      "images/prod50-1.jpg"
+    ]
+  },
+  {
+    "id": 51,
+    "title": "Antix Sol Skatewax (black)",
+    "price": "₺740",
+    "oldPrice": "₺800",
+    "category": "wax",
+    "description": "Güneş formundaki bu siyah wax, metal borularda ve mermer kenarlarda sürtünmeyi yok eder. Yoğun formülü sayesinde az miktarda kullanım bile uzun süreli kayganlık sağlar.",
+    "highlights": [
+      "Maple 7 kat deck",
+      "ABEC-7 rulman",
+      "90A bushing"
+    ],
+    "images": [
+      "images/prod51-1.jpg",
+      "images/prod51-2.jpg",
+      "images/prod51-3.jpg"
+    ]
+  },
+  {
+    "id": 52,
+    "title": "DGK Dirty Ghetto Wax Red",
+    "price": "₺600",
+    "oldPrice": "₺735",
+    "category": "wax",
+    "description": "Sokak kaykaycılarının ihtiyaçlarına göre formüle edilmiş, kırmızı renkli güçlü bir wax. Pürüzlü duvar kenarlarını ve bankları slide yapmaya uygun hale getirmek için birebirdir.",
+    "highlights": [
+      "Maple 7 kat deck",
+      "ABEC-7 rulman",
+      "90A bushing"
+    ],
+    "images": [
+      "images/prod52-1.jpg"
+    ]
+  },
+  {
+    "id": 53,
+    "title": "Enjoi Panda Candle Skatewax (white)",
+    "price": "₺715",
+    "oldPrice": "₺750",
+    "category": "wax",
+    "description": "Sevimli panda figürü şeklindeki bu mum, hem dekoratif hem de işlevsel. Kaykay spotunuzu kayganlaştırmak için kullanmaya kıyamayacağınız kadar güzel bir tasarıma sahip.",
+    "highlights": [
+      "Maple 7 kat deck",
+      "ABEC-7 rulman",
+      "90A bushing"
+    ],
+    "images": [
+      "images/prod53-1.jpg"
+    ]
+  },
+  {
+    "id": 54,
+    "title": "Grizzly Grease Skatewax (pink)",
+    "price": "₺620",
+    "oldPrice": "₺735",
+    "category": "wax",
+    "description": "Pembe rengi ve yumuşak dokusuyla yüzeye kolayca yayılan, tereyağı kıvamında bir kayganlaştırıcı. Metal ve beton zeminlerde takılmadan uzun grind'lar yapmanıza olanak tanır.",
+    "highlights": [
+      "Maple 7 kat deck",
+      "ABEC-7 rulman",
+      "90A bushing"
+    ],
+    "images": [
+      "images/prod54-1.jpg"
+    ]
+  },
+  {
+    "id": 55,
+    "title": "Hopps Bighopps Skatewax (multi)",
+    "price": "₺500",
+    "oldPrice": "₺610",
+    "category": "wax",
+    "description": "Büyük bloğu sayesinde geniş alanları hızlıca waxlamanıza yarar. Çok renkli yapısı uygulandığı yerde görünürlük sağlar, böylece nereye sürdüğünüzü bilirsiniz.",
+    "highlights": [
+      "Maple 7 kat deck",
+      "ABEC-7 rulman",
+      "90A bushing"
+    ],
+    "images": [
+      "images/prod55-1.jpg"
+    ]
+  },
+  {
+    "id": 56,
+    "title": "HUF Peak Skatewax (green)",
+    "price": "₺610",
+    "oldPrice": "₺675",
+    "category": "wax",
+    "description": "Piramit şeklindeki tasarımı, köşelere ve dar alanlara uygulamayı kolaylaştırır. Yeşil rengi ve özel formülü ile en sert betonları bile kaykay dostu hale getirir.",
+    "highlights": [
+      "Maple 7 kat deck",
+      "ABEC-7 rulman",
+      "90A bushing"
+    ],
+    "images": [
+      "images/prod56-1.jpg"
+    ]
+  },
+  {
+    "id": 57,
+    "title": "Independent Curb Killer Skatewax (red)",
+    "price": "₺457",
+    "oldPrice": "₺499",
+    "category": "wax",
+    "description": "Adından da anlaşılacağı gibi kaldırım kenarlarının (curb) düşmanı olan sert bir wax. Kırmızı rengiyle işaret bırakır ve en pürüzlü yüzeyleri bile dize getirir.",
+    "highlights": [
+      "Maple 7 kat deck",
+      "ABEC-7 rulman",
+      "90A bushing"
+    ],
+    "images": [
+      "images/prod57-1.jpg"
+    ]
+  },
+  {
+    "id": 58,
+    "title": "Pig Head Neon Skatewax (multi)",
+    "price": "₺420",
+    "oldPrice": "₺465",
+    "category": "wax",
+    "description": "Domuz kafası şeklindeki bu neon renkli wax, eğlenceli görünümünün altında ciddi bir performans saklar. Her türlü hava koşulunda yüzeye tutunur ve mükemmel kayganlık sağlar.",
+    "highlights": [
+      "Maple 7 kat deck",
+      "ABEC-7 rulman",
+      "90A bushing"
+    ],
+    "images": [
+      "images/prod58-1.jpg"
+    ]
+  },
+  {
+    "id": 59,
+    "title": "skatedeluxe Square Skatewax (red)",
+    "price": "₺500",
+    "oldPrice": "₺548",
+    "category": "wax",
+    "description": "Kare formu sayesinde elde tutuşu rahattır ve kenarlara uygulaması pratiktir. Kırmızı rengiyle dikkat çeken bu wax, her kaykaycının çantasında bulunması gereken temel bir üründür.",
+    "highlights": [
+      "Maple 7 kat deck",
+      "ABEC-7 rulman",
+      "90A bushing"
+    ],
+    "images": [
+      "images/prod59-1.jpg"
+    ]
+  },
+  {
+    "id": 60,
+    "title": "Sketti Butta Balkabağı Kaykay Wax",
+    "price": "₺350",
+    "oldPrice": "₺400",
+    "category": "wax",
+    "description": "Balkabağı şekli ve hoş kokusuyla fark yaratan bu özel seri wax, kaykay seanslarınıza keyif katar. Yumuşak yapısı sayesinde yüzeye hızla nüfuz eder ve anında kayganlık sağlar.",
+    "highlights": [
+      "Maple 7 kat deck",
+      "ABEC-7 rulman",
+      "90A bushing"
+    ],
+    "images": [
+      "images/prod60-1.jpg"
+    ]
+  },
+  {
+    "id": 61,
+    "title": "Toy Machine Bloodshot Skatewax (black)",
+    "price": "₺340",
+    "oldPrice": "₺399",
+    "category": "wax",
+    "description": "Tek gözlü canavar karakteriyle ikonikleşen siyah wax. Sert yapısı sayesinde sıcak havalarda erimez, her koşulda tutarlı bir grind performansı sunar.",
+    "highlights": [
+      "Maple 7 kat deck",
+      "ABEC-7 rulman",
+      "90A bushing"
+    ],
+    "images": [
+      "images/prod61-1.jpg"
+    ]
+  }
+]

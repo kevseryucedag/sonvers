@@ -1,0 +1,174 @@
+<!-- =============================
+     ÜRÜN YÖNETİMİ — SKATEX ADMIN
+============================== -->
+
+<div>
+    <h2 class="dash-title">Ürün Yönetimi</h2>
+    <p class="dash-subtitle">Mevcut ürünleri görüntüleyebilir, yeni ürün ekleyebilirsin.</p>
+
+    <!-- ÜRÜN EKLEME FORMU -->
+    <div class="pixel-box" style="padding:20px; margin-bottom:25px;">
+        <h3 style="font-family:'Press Start 2P'; color:#00ff99;">Yeni Ürün Ekle</h3>
+
+        <form class="admin-form" id="product-add-form">
+
+            <label>Ürün Adı</label>
+            <input type="text" id="p-title" required>
+
+            <label>Fiyat</label>
+            <input type="text" id="p-price" placeholder="₺2999" required>
+
+            <label>Eski Fiyat (Opsiyonel)</label>
+            <input type="text" id="p-oldprice" placeholder="₺3299">
+
+            <label>Kategori</label>
+            <select id="p-category" required>
+                <option value="deck">Deck</option>
+                <option value="truck">Truck</option>
+                <option value="wheel">Wheel</option>
+                <option value="textile">Textile</option>
+            </select>
+
+            <label>Ürün Açıklaması</label>
+            <textarea id="p-desc" rows="4" required></textarea>
+
+            <label>Görsel URL</label>
+            <input type="text" id="p-img" placeholder="images/img1.jpg" required>
+
+            <button type="submit">Ürünü Ekle</button>
+        </form>
+    </div>
+
+    <!-- ÜRÜN LİSTE TABLOSU -->
+    <div class="pixel-box" style="padding:20px;">
+        <h3 style="font-family:'Press Start 2P'; color:#00ff99;">Ürün Listesi</h3>
+
+        <table class="admin-table" id="product-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Görsel</th>
+                    <th>Ad</th>
+                    <th>Fiyat</th>
+                    <th>Kategori</th>
+                    <th>Sil</th>
+                </tr>
+            </thead>
+            <tbody id="product-table-body">
+                <!-- JS ile yüklenecek -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<!-- ======================================
+     SAYFA YÜKLENDİĞİNDE ÇALIŞAN SCRIPT
+======================================= -->
+
+<script>
+window.onViewLoaded = function(view) {
+    if (view !== "products") return;
+
+    console.log("Products view initialized.");
+
+    /* -------------
+       ÜRÜNLERİ OKU
+    ------------- */
+
+    function loadProducts() {
+        return JSON.parse(localStorage.getItem("admin_products") || "[]");
+    }
+
+    function saveProducts(list) {
+        localStorage.setItem("admin_products", JSON.stringify(list));
+    }
+
+    // Eğer localStorage boşsa → products.json’dan içeri aktar
+    async function initializeProducts() {
+        let stored = loadProducts();
+
+        if (stored.length === 0) {
+            const res = await fetch("products.json");
+            const data = await res.json();
+            saveProducts(data);
+            stored = data;
+        }
+        return stored;
+    }
+
+    /* ------------------------
+       ÜRÜN TABLOSUNU ÇİZ
+    ------------------------- */
+
+    function renderTable() {
+        const list = loadProducts();
+        const tbody = document.getElementById("product-table-body");
+
+        tbody.innerHTML = list.map(p => `
+            <tr>
+                <td>${p.id}</td>
+                <td><img src="${p.images[0]}" style="width:60px; border-radius:6px;"></td>
+                <td>${p.title}</td>
+                <td>${p.price}</td>
+                <td>${p.category}</td>
+                <td>
+                    <button class="admin-delete-btn" data-id="${p.id}">
+                        Sil
+                    </button>
+                </td>
+            </tr>
+        `).join("");
+    }
+
+    /* ------------------------
+       ÜRÜN EKLEME FORMU
+    ------------------------- */
+
+    document.getElementById("product-add-form").addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const list = loadProducts();
+
+        const newProduct = {
+            id: Date.now(), // benzersiz ID
+            title: document.getElementById("p-title").value,
+            price: document.getElementById("p-price").value,
+            oldPrice: document.getElementById("p-oldprice").value || null,
+            description: document.getElementById("p-desc").value,
+            category: document.getElementById("p-category").value,
+            images: [document.getElementById("p-img").value]
+        };
+
+        list.push(newProduct);
+        saveProducts(list);
+
+        alert("Ürün başarıyla eklendi!");
+        renderTable();
+        e.target.reset();
+    });
+
+    /* ------------------------
+       ÜRÜN SİLME
+    ------------------------- */
+
+    document.addEventListener("click", (e) => {
+        if (e.target.classList.contains("admin-delete-btn")) {
+            const id = e.target.getAttribute("data-id");
+            let list = loadProducts();
+            list = list.filter(p => String(p.id) !== String(id));
+            saveProducts(list);
+            renderTable();
+        }
+    });
+
+    /* ------------------------
+       İLK ÇALIŞMA
+    ------------------------- */
+
+    initializeProducts().then(() => {
+        renderTable();
+    });
+};
+</script>
+

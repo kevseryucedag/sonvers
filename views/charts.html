@@ -1,0 +1,106 @@
+<div>
+    <h2 class="dash-title">İstatistikler</h2>
+    <p class="dash-subtitle">Site performansı ve öğrenci sayıları için örnek grafikler.</p>
+
+    <!-- GRAFİK 1 -->
+    <div class="pixel-box" style="padding:25px; margin-bottom:30px;">
+        <h3 style="font-family:'Press Start 2P'; color:#00ff99; margin-bottom:15px;">
+            Ürün Kategorisi Dağılımı
+        </h3>
+        <canvas id="chart-categories" height="140"></canvas>
+    </div>
+
+    <!-- GRAFİK 2 -->
+    <div class="pixel-box" style="padding:25px; margin-bottom:30px;">
+        <h3 style="font-family:'Press Start 2P'; color:#00ff99; margin-bottom:15px;">
+            Aylık Ziyaret Grafiği
+        </h3>
+        <canvas id="chart-visits" height="140"></canvas>
+    </div>
+
+    <!-- GRAFİK 3 -->
+    <div class="pixel-box" style="padding:25px;">
+        <h3 style="font-family:'Press Start 2P'; color:#00ff99; margin-bottom:15px;">
+            Rastgele Üretim Verisi (Demo)
+        </h3>
+        <canvas id="chart-demo" height="140"></canvas>
+    </div>
+</div>
+
+<script>
+window.onViewLoaded = function(view){
+    if(view !== "charts") return;
+
+    console.log("%c[CHARTS] Yüklendi","color:#00ff99;");
+
+    /* ================
+       1) Ürün Kategorisi
+       ================ */
+    const products = JSON.parse(localStorage.getItem("skx_products") || "[]");
+    const count = {};
+
+    products.forEach(p => {
+        if(!count[p.category]) count[p.category] = 0;
+        count[p.category]++;
+    });
+
+    new Chart(document.getElementById("chart-categories"), {
+        type: "doughnut",
+        data: {
+            labels: Object.keys(count),
+            datasets: [{
+                data: Object.values(count),
+                backgroundColor: ["#00ff99","#00ccff","#ffaa00","#ff0066","#ffffff"]
+            }]
+        },
+        options: { 
+            plugins:{ legend:{ labels:{ color:"#fff" }}}
+        }
+    });
+
+    /* ================
+       2) Aylık Ziyaret
+       ================ */
+    new Chart(document.getElementById("chart-visits"), {
+        type: "line",
+        data: {
+            labels: ["Oca","Şub","Mar","Nis","May","Haz","Tem","Ağu","Eyl","Eki","Kas","Ara"],
+            datasets: [{
+                label: "Ziyaret",
+                data: [320,420,500,480,610,700,750,720,680,760,820,930],
+                borderColor: "#00ff99",
+                backgroundColor: "#00ff9933",
+                tension: 0.3,
+                fill: true
+            }]
+        },
+        options:{
+            scales:{
+                x:{ ticks:{ color:"#fff" }},
+                y:{ ticks:{ color:"#fff" }}
+            }
+        }
+    });
+
+    /* ============================
+       3) Demo Rastgele Grafik
+       ============================ */
+    new Chart(document.getElementById("chart-demo"), {
+        type: "bar",
+        data: {
+            labels: ["A","B","C","D","E","F"],
+            datasets:[{
+                data: Array.from({length:6},()=>Math.floor(Math.random()*100)),
+                backgroundColor:"#00ff99"
+            }]
+        },
+        options:{
+            plugins:{legend:{display:false}},
+            scales:{
+                x:{ticks:{color:"#fff"}},
+                y:{ticks:{color:"#fff"}}
+            }
+        }
+    });
+};
+</script>
