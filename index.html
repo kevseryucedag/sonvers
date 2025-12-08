@@ -729,7 +729,53 @@ function closeAnn(){
 }
 </script>
 
-	
+	script>
+const announcements = [
+  {
+    title: "Lorem Ipsum Dolor Sit Amet",
+    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae urna sed velit bibendum tristique.",
+    files: ["lorem.pdf", "dolor.docx", "image1.jpg"]
+  },
+  {
+    title: "Consectetur Adipiscing Elit",
+    content: "Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    files: ["elit.pdf"]
+  },
+  {
+    title: "Sed Do Eiusmod Tempor",
+    content: "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+    files: []
+  },
+  {
+    title: "Ut Enim Ad Minim Veniam",
+    content: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    files: ["veniam.docx"]
+  },
+  {
+    title: "Duis Aute Irure Dolor",
+    content: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    files: ["sample1.jpg", "sample2.png"]
+  }
+];
+
+function openAnnouncement(index) {
+  const a = announcements[index];
+  document.getElementById("modalTitle").innerText = a.title;
+  document.getElementById("modalContent").innerText = a.content;
+
+  let fileHtml = "";
+  a.files.forEach(f => {
+    fileHtml += `<p><a href="#">${f}</a></p>`;
+  });
+
+  document.getElementById("modalFiles").innerHTML = fileHtml;
+  document.getElementById("announcementModal").style.display = "block";
+}
+
+function closeAnnouncement() {
+  document.getElementById("announcementModal").style.display = "none";
+}
+</script>
 	
 	
 	
